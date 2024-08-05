@@ -5,8 +5,6 @@
 </p>
 
 
-
-
 <h1 align="center">
 
 <a href="https://eniquego.com/">Autonomous Investment Advisor</a>
@@ -22,18 +20,21 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 screenshot of UI
 
 ## Organization and Documentation
-
+### Folder Hierarchy
 
 
 ## Technical Sophistication and Efficiency
+### System Architecture
+### Data Flow Diagram (DFD)
 
-
-
+<p align="center">
+    <img src="images/dfd.jpg" alt="DFD"  width="600" height="350">
+ </p>
 ## Reproducibility
 
 ### Package Requirements
 
--   os: Debian 11
+-   OS: Debian 11
 -   Python: 3.10.14; 3.11.2
 -   Numpy: 1.25.2
 -   Sklearn: 1.3.0
@@ -47,7 +48,7 @@ screenshot of UI
 ## Our Team
 
 <p align="center">
-    <img src="images/our team.jpg" alt="Enique logo" width="600" height="350">
+    <img src="images/our team.jpg" alt="Our Team" width="600" height="350">
  </p>
 
 
