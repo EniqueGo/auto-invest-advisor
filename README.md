@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://eniquego.com/">
+  <a href="https://eniquego.com/" target="_blank">
     <img src="images/logo.jpg" alt="Enique logo" width="200" height="210">
   </a>
 </p>
@@ -7,7 +7,7 @@
 
 <h1 align="center">
 
-<a href="https://eniquego.com/">Autonomous Investment Advisor</a>
+<a href="https://eniquego.com/" target="_blank">Autonomous Investment Advisor</a>
 
 </h1>
 
