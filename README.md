@@ -17,7 +17,9 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 </p>
 
-- TODO screenshot of UI
+<p align="center">
+    <img src="images/interface_design.png" alt="bv"/>
+ </p>
   
 ## Problem Statement
 **Background**: Retail investors often need more practical guidance on making short-term profits from Bitcoin than traditional investment assets. Bitcoin Financial Advisor services can address this need by extracting prediction signals from Reddit data and customizing recommendations to investors' dynamic needs.
