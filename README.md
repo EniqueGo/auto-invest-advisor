@@ -323,22 +323,37 @@ Whew. We’ve chopped much wood in this section. Hopefully, you’re still awake
 
 ## Conclusion
 
+**Enique’s business goals were:**
+
+**More earning and learning. Less spending and tending.**
+
+**Earning and Learning:**
+- We accomplish this by providing market predictions and engineered features that dynamically serve any user’s immediate earning needs.
+- It long-term serves as an educational tool for users to learn financial investing.
+
+**Spending and Tending:**
+- Enique is accessible and efficient both cost and time-wise.
+- Let’s not forget how much Enique is designed to be plug-n-play and scalable! So when Fidelity buys us out to replace their human investment advisors, they can seamlessly integrate any in-house prediction models. That’s less spending on their part for labor and less tending or manual babysitting of downstream users.
+
+**In summary, Enique proves highly effective at role-playing an autonomous financial advisor and servicing customer needs.**
+
 
 
 ## Future Work
 
-- Data Enrichment
-  - Traditional - SPX, VIX, MOVE;
-  - Blockchain - ledger, mining; and,
-  - Asset adoption - legal landscape
+For our next phase, we plan to work on three core areas:
 
-- Sharpen Prediction
-    - Bias prediction errors to reflect loss aversion.
-    - Model tuning.
-    - LSTM layer complexity.
-      
-- Scope Expansion
-  - RAG for humanizing and outside data-source retrieval.
+1. **Broker Connection:**
+   - To allow users to one-stop-shop, or shall we say one-stop-invest. Once we connect to a financial trading platform or brokerage, users can go from getting investment advice to implementing said advice all in the same place.
+
+2. **Sharpening Prediction Bias and Modeling:**
+   - We treat losses and missing out on gains as the same “error.” In reality, our target client base would be more adverse to losing money than not having made as much as they could. Our prediction model was an exhibition sample that can be used for further improvement.
+
+3. **Data Enrichment:**
+   - **Traditional:** SPX, VIX, MOVE
+   - **Blockchain:** Ledger, mining
+   - **Asset Adoption Signals:** Legal landscape
+   - **RAG:** Humanizing and outside data-source retrieval
 
 
 
