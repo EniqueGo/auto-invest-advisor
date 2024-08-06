@@ -39,7 +39,7 @@ Bitcoin Financial Advisor services said need by extracting prediction signals fr
 ### Data Overview
 
 <p align="center">
-    <img src="images/dfd.jpg" alt="DFD"  width="600" height="350">
+    <img src="images/dfd.jpg" alt="DFD"  width="600" height="320">
  </p>
 
 #### Key Features
@@ -92,7 +92,7 @@ Bitcoin Financial Advisor services said need by extracting prediction signals fr
 ## Our Team
 
 <p align="center">
-    <img src="images/our team.jpg" alt="Our Team" width="600" height="350">
+    <img src="images/our team.jpg" alt="Our Team" width="600" height="340">
  </p>
 
 
