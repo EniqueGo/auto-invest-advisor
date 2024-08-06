@@ -67,8 +67,8 @@ These business values create earning opportunities, foster intellectual growth, 
 -   Sklearn: 1.3.0
 -   Tensorflow: 2.13.0; 2.14.0
 -   Keras: 2.8; 2.14.0
--   Hadoop 3.3
--   Spark 3.3
+-   Hadoop: 3.3
+-   Spark: 3.3
 -   Spark-nlp: 4.2.0
 -   Prophet: 1.1.5
 -   Streamlit: 1.34.0
