@@ -287,7 +287,9 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 **Validated:**
 - Our model fit confirmed a significant upward linear growth trend and daily and weekly seasonalities, as depicted in the charts on your right.
 
-![Seasonality](/mnt/data/decom.png)
+<p align="center">
+    <img src="images/decom.png" alt="bv"  width="600" height="350">
+ </p>
 
 **Debunked:**
 - One assumption we debunked was the multiplicative effect. Though market volatility tends to beget volatility, such a signal was negligible or at least muted in the long run.
@@ -296,8 +298,10 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 
 For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had nothing to do with Bitcoin. More importantly, they didn’t seem to have a price impact.
 
-![Sentiment Indicator](/mnt/data/senti_indi.jpeg)
-
+<p align="center">
+    <img src="images/senti_indi.jpeg" alt="bv"  width="600" height="350">
+ </p>
+ 
 **Validated:**
 - If we could find relevant posts with consensus in sentiment, sentiment could be a leading indicator.
 
