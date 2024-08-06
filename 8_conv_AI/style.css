@@ -1,0 +1,60 @@
+body {background-color: #f5f8f7;}
+
+h2 {color: #8a8a8a; text-align: center; font-size: 1.2em;}
+.block-container {padding-top: 10px;!important;}
+
+.sentiment-container {
+    font-family: Arial, sans-serif;
+    width: 90%;
+    margin: 0 auto;
+}
+.sentiment {
+    margin-bottom: 5px;
+    padding: 5px;
+}
+.positive {
+    color: #2ec4ab;
+}
+.neutral {
+    color: #ffb200;
+}
+.negative {
+    color: #ff5395;
+}
+.senti-label {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.senti-text {
+    font-size: 0.8em;
+    color: #333;
+}
+.dashed-line {
+    border-top: 1px dashed #ddd;
+    margin: 5px 0;
+}
+
+[data-testid="stChatMessage"] {
+    padding: 2px;
+}
+
+[data-testid="stMarkdownContainer"] p{
+    font-size: 0.95em;
+}
+
+
+.senti-time {
+    color:#8a8a8a;
+    text-align: right;
+}
+
+a.senti-link {
+    color: #8a8a8a;
+ }
+
+#representative-posts {
+    padding-top: 8px;
+    padding-bottom: 0px;
+}
