@@ -276,6 +276,47 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
+### Findings
+
+We focus on model findings and the story they tell.
+
+#### Bitcoin Seasonality
+
+Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic trends in Bitcoin persist, indicating some baseline and seasonality.
+
+**Validated:**
+- Our model fit confirmed a significant upward linear growth trend and daily and weekly seasonalities, as depicted in the charts on your right.
+
+![Seasonality](/mnt/data/decom.png)
+
+**Debunked:**
+- One assumption we debunked was the multiplicative effect. Though market volatility tends to beget volatility, such a signal was negligible or at least muted in the long run.
+
+#### Sentiment Signal
+
+For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had nothing to do with Bitcoin. More importantly, they didn’t seem to have a price impact.
+
+![Sentiment Indicator](/mnt/data/senti_indi.jpeg)
+
+**Validated:**
+- If we could find relevant posts with consensus in sentiment, sentiment could be a leading indicator.
+
+**Debunked:**
+- The relationship between sentiment and price is not generalizable. It is convoluted, and their causation direction is highly circumstantial.
+
+#### Conversational AI
+
+One of the core assumptions that made Enique possible was that modern-day conversational AI, in our case, Google Gemini, could role-play as an investment advisor for non-financial retail clients. Gemini had enough pre-trained knowledge to range across any technical level.
+
+**Validated:**
+- A conversational AI could interpret user prompts into user needs and fetch the correct information to satisfy that need. Direct data integration prevents hallucination. Enique stands out by integrating datasets that can be entirely numerical without relying on third-party qualitative analysis.
+
+**Debunked:**
+- Conversational AI struggles with accuracy when integrated datasets are numeric due to the relative lack of richer context. However, we overcame this by using restrictive function calling, keeping Enique grounded in our data and prediction model analyses suite.
+
+Whew. We’ve chopped much wood in this section. Hopefully, you’re still awake. Now, let’s step back from the trees to see the forest.
+
+
 ## Conclusion
 
 
