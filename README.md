@@ -71,6 +71,7 @@ These business values create earning opportunities, foster intellectual growth, 
 -   Spark 3.3
 -   Spark-nlp: 4.2.0
 -   Prophet: 1.1.5
+-   Streamlit: 1.34.0
   
 ###  Data and Processing Overview
 
@@ -199,10 +200,22 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - The final chart (bottom right) demonstrates that the earnings opportunity for Bitcoin is much more significant due to its higher volatility. However, the risk-adjusted returns could be more attractive.
   - These data ingredients offer pretty exciting insights.
 
+###  Model Framework
 
-municate relevant model findings and analyses. Our framework has two macro-categories of models: predictive and conversational.
+Our ultimate goal is to provide actionable investment advice to the average person—the little guy who lacks extensive financial knowledge. Achieving this involves two main components: having our market prediction and conversing with the user to communicate relevant model findings and analyses.
+
+Our model framework has two macro-categories of models: **predictive** and **conversational**.
+
+<p align="center">
+    <img src="images/modelframe.jpg" alt="DFD" />
+ </p>
+
 
 #### Predictive Modeling
+
+<p align="center">
+    <img src="images/premodel.jpg" alt="DFD" />
+ </p>
 
 **Layers of Prediction Models:**
 
@@ -223,45 +236,13 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 - This results in our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).
 
 
-<p align="center">
-    <img src="images/modelframe.jpg" alt="DFD" />
- </p>
- 
 
-### Data Trend
 
-- **Exploratory Analysis:**
-  - Extensive exploratory analysis is available in our GitHub repository. Key insights include higher blog post frequency during business hours, with a spike at 2 am due to nocturnal users.
-  - Comparison of Reddit post activity with Bitcoin trade volume shows overlap, validating the use of Reddit data for sentiment signals.
-
-- **Bitcoin vs. S&P500 Trading Volumes:**
-  - Bitcoin trading volumes do not follow traditional market concentrations, and the earnings opportunity for Bitcoin is more significant due to its higher volatility, though risk-adjusted returns are less attractive.
-
-### Data and Processing Overview
-
-- **Data Sources:**
-  - Bitcoin market data from Binance, including prices and trade volume.
-  - Reddit blog posts to proxy sentiment for our prediction model.
-
-**Data Ingestion and Processing:**
-- **Bitcoin Data:** Ingested hourly, cleaned, and processed.
-- **Reddit Data:** API pulls data every fifteen minutes due to the limit of 1000 observations, focusing on text submissions from "r/bitcoin."
-
-**Sentiment Analysis:**
-- Data is cleaned and filtered through zero-shot learning.
-- Reddit posts are processed using a pre-trained sentiment model to assign sentiment scores, creating unique features.
-
-**Data Management:**
-- A cloud scheduler regulates the live data process.
-- Historical data is processed using Spark for large data sizes, stored in Google Cloud Storage Buckets, designed for scalability and flexibility.
-
+#### Conversational Model (Gemini AI Model)
 
 <p align="center">
-    <img src="images/premodel.jpg" alt="DFD" />
+    <img src="images/conv.jpg" alt="DFD" />
  </p>
- 
-
-### Conversational Model (Gemini AI Model)
 
 - **Interpret User Requests:** Gemini interprets client needs through the UI chatbox.
 - **Prompt Engineering:** Trained to retrieve specific items from the prediction model and data outputs, repackaging them into layperson's terms for the user.
@@ -269,12 +250,8 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 **Final Product:**
 - The final product is displayed in our UI tool, thanks to multiple rounds of UX testing with the help of friends and family.
 
-
-<p align="center">
-    <img src="images/conv.jpg" alt="DFD" />
- </p>
-
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
+
 
 ## Findings
 
@@ -337,12 +314,12 @@ Whew. We’ve chopped much wood in this section. Hopefully, you’re still awake
 
 **In summary, Enique proves highly effective at role-playing an autonomous financial advisor and servicing customer needs.**
 
-## Trello Status
+<!--## Trello Status
 
 
 <img src="images/trello-Aug6-2024.png" alt="bv" />
 
-Aug 6, 2024
+Aug 6, 2024-->
 
 
 
