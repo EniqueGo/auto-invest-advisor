@@ -42,19 +42,19 @@ Bitcoin Financial Advisor services said need by extracting prediction signals fr
     <img src="images/dfd.jpg" alt="DFD"  width="600" height="350">
  </p>
 
-### Key Features
+#### Key Features
 - TODO3
 - TODO3
 
 ### Model Architecture
 <p align="center">
-    <img src="images/modelframe.jpg" alt="DFD"  width="600" height="350">
+    <img src="images/modelframe.jpg" alt="DFD"  width="600" height="320">
  </p>
  <p align="center">
-    <img src="images/premodel.jpg" alt="DFD"  width="600" height="350">
+    <img src="images/premodel.jpg" alt="DFD"  width="600" height="320">
  </p>
  <p align="center">
-    <img src="images/conv.jpg" alt="DFD"  width="600" height="350">
+    <img src="images/conv.jpg" alt="DFD"  width="600" height="320">
  </p>
  
 ## Reproducibility
@@ -71,6 +71,23 @@ Bitcoin Financial Advisor services said need by extracting prediction signals fr
 -   Spark 3.3
 -   Spark-nlp: 4.2.0
 -   Prophet: 1.1.5
+
+## Future Work
+
+- Data Enrichment
+  - Traditional - SPX, VIX, MOVE;
+  - Blockchain - ledger, mining; and,
+  - Asset adoption - legal landscape
+
+- Sharpen Prediction
+    - Bias prediction errors to reflect loss aversion.
+    - Model tuning.
+    - LSTM layer complexity.
+      
+- Scope Expansion
+  - RAG for humanizing and outside data-source retrieval.
+
+
 
 ## Our Team
 
