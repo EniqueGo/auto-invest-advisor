@@ -34,9 +34,9 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
     <img src="images/bv.jpg" alt="bv"  width="600" height="350">
  </p>
  
-- Superior Autonomy: Enique’s capabilities surpass those of typical human investment advisors.
+- **Superior Autonomy**: Enique’s capabilities surpass those of typical human investment advisors.
   - Human investment advisors provide financial guidance based on standardized strategies and second-hand research. They cannot customize or generate ad-hoc analyses upon request. Additionally, their fee structures often must be revised for individuals with smaller deposits.
-- Customized Strategies: Enique delivers specific investment strategies based on its proprietary market predictions.
+- **Customized Strategies**: Enique delivers specific investment strategies based on its proprietary market predictions.
 Plug-and-Play Tool: Enique can seamlessly integrate any in-house proprietary prediction model, enhancing offerings for downstream clients.
 
 **Illustrative Example:**
@@ -65,10 +65,6 @@ These business values create earning opportunities, foster intellectual growth, 
   - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
 
 
-<p align="center">
-    <img src="images/dfd.jpg" alt="DFD"  width="600" height="320">
- </p>
-
 #### Data Ingestion and Processing:
 - **Bitcoin Data**: Prices and trade volume are ingested hourly, cleaned, and processed.
 - **Reddit Data**:
@@ -76,8 +72,25 @@ These business values create earning opportunities, foster intellectual growth, 
   - Processing logic updates overlapping Reddit data with the latest reaction metrics.
   - Focuses on text submissions from the subreddit “r/bitcoin,” excluding gifs, videos, and links.
 
+<p align="center">
+    <img src="images/dfd.jpg" alt="DFD"  width="600" height="320">
+ </p>
 
 
+##### Sentiment Analysis:
+Data is cleaned and filtered through zero-shot learning.
+Reddit posts are processed using a pre-trained three-category sentiment model to assign positive, negative, and neutral sentiment scores, creating unique features.
+
+##### Data Management:
+- A cloud scheduler regulates the live data process.
+- Historical Data:
+  - Bitcoin trade data (last five years, approx. 9.7 MB) and Reddit data (approx. 2.4 TB) are processed using Spark to handle large data sizes.
+
+##### Storage and Scalability:
+- All processed data is stored in Google Cloud Storage Buckets.
+- Designed for scalability and flexibility to integrate new enhancements and additional data sources.
+- Capable of extracting trend analytics and enriching prediction model inputs to expand advisory offerings.
+- Flexible enough to integrate with third-party models for easy platform integration.
 
 
 
