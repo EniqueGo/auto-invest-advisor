@@ -57,6 +57,18 @@ These business values create earning opportunities, foster intellectual growth, 
 
 ## Technical Sophistication and Efficiency
 
+### Package Requirements
+
+-   OS: Debian 11
+-   Python: 3.10.14; 3.11.2
+-   Numpy: 1.25.2
+-   Sklearn: 1.3.0
+-   Tensorflow: 2.13.0; 2.14.0
+-   Keras: 2.8; 2.14.0
+-   Hadoop 3.3
+-   Spark 3.3
+-   Spark-nlp: 4.2.0
+-   Prophet: 1.1.5
   
 ###  Data and Processing Overview
 
@@ -264,24 +276,9 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
+## Conclusion
 
 
-
- 
-## Reproducibility
-
-### Package Requirements
-
--   OS: Debian 11
--   Python: 3.10.14; 3.11.2
--   Numpy: 1.25.2
--   Sklearn: 1.3.0
--   Tensorflow: 2.13.0; 2.14.0
--   Keras: 2.8; 2.14.0
--   Hadoop 3.3
--   Spark 3.3
--   Spark-nlp: 4.2.0
--   Prophet: 1.1.5
 
 ## Future Work
 
