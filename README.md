@@ -276,11 +276,11 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
-### Findings
+## Findings
 
 We focus on model findings and the story they tell.
 
-#### Bitcoin Seasonality
+### Bitcoin Seasonality
 
 Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic trends in Bitcoin persist, indicating some baseline and seasonality.
 
@@ -294,7 +294,7 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 **Debunked:**
 - One assumption we debunked was the multiplicative effect. Though market volatility tends to beget volatility, such a signal was negligible or at least muted in the long run.
 
-#### Sentiment Signal
+### Sentiment Signal
 
 For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had nothing to do with Bitcoin. More importantly, they didn’t seem to have a price impact.
 
@@ -308,7 +308,7 @@ For our sentiment signal, we started with the hunch that strong feelings were no
 **Debunked:**
 - The relationship between sentiment and price is not generalizable. It is convoluted, and their causation direction is highly circumstantial.
 
-#### Conversational AI
+### Conversational AI
 
 One of the core assumptions that made Enique possible was that modern-day conversational AI, in our case, Google Gemini, could role-play as an investment advisor for non-financial retail clients. Gemini had enough pre-trained knowledge to range across any technical level.
 
