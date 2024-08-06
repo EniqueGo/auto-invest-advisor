@@ -34,9 +34,7 @@ Bitcoin Financial Advisor services said need by extracting prediction signals fr
 
 
 ## Technical Sophistication and Efficiency
-### System Architecture
-- TODO2
-- TODO2
+
   
 ### Data Overview
 
@@ -47,6 +45,17 @@ Bitcoin Financial Advisor services said need by extracting prediction signals fr
 ### Key Features
 - TODO3
 - TODO3
+
+### Model Architecture
+<p align="center">
+    <img src="images/modelframe.jpg" alt="DFD"  width="600" height="350">
+ </p>
+ <p align="center">
+    <img src="images/premodel.jpg" alt="DFD"  width="600" height="350">
+ </p>
+ <p align="center">
+    <img src="images/conv.jpg" alt="DFD"  width="600" height="350">
+ </p>
  
 ## Reproducibility
 
