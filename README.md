@@ -186,26 +186,87 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - These data ingredients offer pretty exciting insights.
 
 
+municate relevant model findings and analyses. Our framework has two macro-categories of models: predictive and conversational.
+
+#### Predictive Modeling
+
+**Layers of Prediction Models:**
+
+1. **Baseline Prophet Model:**
+   - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
+   - During training, we input various combinations of engineered features as regressors, but none were beneficial at this stage.
+   - Outputs include baseline price, trend, seasonality, and a prediction residual.
+
+2. **Sentiment Neural Network:**
+   - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
+   - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+
+**Why Focus on Bitcoin:**
+- Unlike traditional equities, Bitcoin has little to no fundamental valuation and is driven by technical factors and essentially sentiment. This makes it an ideal target for a tool to ingest big data and run deep learning models autonomously.
+
+**Model Training and Validation:**
+- Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data.
+- This results in our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).
 
 
-
-
-
-
-
-
-----------
-
-### Model Architecture
 <p align="center">
     <img src="images/modelframe.jpg" alt="DFD"  width="600" height="320">
  </p>
- <p align="center">
+ 
+
+### Data Trend
+
+- **Exploratory Analysis:**
+  - Extensive exploratory analysis is available in our GitHub repository. Key insights include higher blog post frequency during business hours, with a spike at 2 am due to nocturnal users.
+  - Comparison of Reddit post activity with Bitcoin trade volume shows overlap, validating the use of Reddit data for sentiment signals.
+
+- **Bitcoin vs. S&P500 Trading Volumes:**
+  - Bitcoin trading volumes do not follow traditional market concentrations, and the earnings opportunity for Bitcoin is more significant due to its higher volatility, though risk-adjusted returns are less attractive.
+
+### Data and Processing Overview
+
+- **Data Sources:**
+  - Bitcoin market data from Binance, including prices and trade volume.
+  - Reddit blog posts to proxy sentiment for our prediction model.
+
+**Data Ingestion and Processing:**
+- **Bitcoin Data:** Ingested hourly, cleaned, and processed.
+- **Reddit Data:** API pulls data every fifteen minutes due to the limit of 1000 observations, focusing on text submissions from "r/bitcoin."
+
+**Sentiment Analysis:**
+- Data is cleaned and filtered through zero-shot learning.
+- Reddit posts are processed using a pre-trained sentiment model to assign sentiment scores, creating unique features.
+
+**Data Management:**
+- A cloud scheduler regulates the live data process.
+- Historical data is processed using Spark for large data sizes, stored in Google Cloud Storage Buckets, designed for scalability and flexibility.
+
+
+<p align="center">
     <img src="images/premodel.jpg" alt="DFD"  width="600" height="320">
  </p>
- <p align="center">
+ 
+
+### Conversational Model (Gemini AI Model)
+
+- **Interpret User Requests:** Gemini interprets client needs through the UI chatbox.
+- **Prompt Engineering:** Trained to retrieve specific items from the prediction model and data outputs, repackaging them into layperson's terms for the user.
+
+**Final Product:**
+- The final product is displayed in our UI tool, thanks to multiple rounds of UX testing with the help of friends and family.
+
+
+<p align="center">
     <img src="images/conv.jpg" alt="DFD"  width="600" height="320">
  </p>
+
+### Summary
+
+We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
+
+
+
+
  
 ## Reproducibility
 
