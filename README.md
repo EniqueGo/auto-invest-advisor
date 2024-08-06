@@ -272,8 +272,6 @@ municate relevant model findings and analyses. Our framework has two macro-categ
     <img src="images/conv.jpg" alt="DFD"  width="600" height="320">
  </p>
 
-### Summary
-
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
 ## Findings
