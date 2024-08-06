@@ -160,7 +160,7 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - Across our Reddit data, blog post frequency was predictably higher during "normal business" hours, with a notable local spike at 2 am. This spike is likely due to nocturnal users like people sacrificing sleep for late-night exploration.
  
 <p align="center">
-    <img src="images/avg_hr.jpg" alt="DFD"  width="600" height="320">
+    <img src="images/avg_hr.jpeg" alt="DFD"  width="600" height="320">
  </p>
 
 
@@ -169,7 +169,7 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - This comparison is a basic sanity check if we use Reddit data to build sentiment signals for predicting Bitcoin prices.
 
 <p align="center">
-    <img src="images/avg_vol.jpg" alt="DFD"  width="600" height="320">
+    <img src="images/avg_vol.jpeg" alt="DFD"  width="600" height="320">
  </p>
 
 
@@ -177,7 +177,7 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - Bitcoin trading volumes, compared to S&P500-related trading volumes shown in red, indicate that Bitcoin does not follow traditional market open and close concentrations.
 
 <p align="center">
-    <img src="images/daily_return.jpg" alt="DFD"  width="600" height="320">
+    <img src="images/daily_return.jpeg" alt="DFD"  width="600" height="320">
  </p>
 
 
