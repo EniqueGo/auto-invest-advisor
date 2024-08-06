@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://eniquego.com/" target="_blank">
-    <img src="images/logo.jpg" alt="Enique logo" width="200" height="210">
+    <img src="images/logo.jpg" alt="Enique logo" width="200" />
   </a>
 </p>
 
@@ -31,7 +31,7 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 ## Business Value
 <p align="center">
-    <img src="images/bv.jpg" alt="bv"  width="600" height="350">
+    <img src="images/bv.jpg" alt="bv"/>
  </p>
  
 - **Superior Autonomy**: Enique’s capabilities surpass those of typical human investment advisors.
@@ -85,7 +85,7 @@ These business values create earning opportunities, foster intellectual growth, 
   - Focuses on text submissions from the subreddit “r/bitcoin,” excluding gifs, videos, and links.
 
 <p align="center">
-    <img src="images/dfd.jpg" alt="DFD"  width="600" height="320">
+    <img src="images/dfd.jpg" alt="DFD">
  </p>
 
 
@@ -172,7 +172,7 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - Across our Reddit data, blog post frequency was predictably higher during "normal business" hours, with a notable local spike at 2 am. This spike is likely due to nocturnal users like people sacrificing sleep for late-night exploration.
  
 <p align="center">
-    <img src="images/avg_hr.jpeg" alt="DFD"  width="600" height="320">
+    <img src="images/avg_hr.jpeg" alt="DFD"  width="600" />
  </p>
 
 
@@ -181,7 +181,7 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - This comparison is a basic sanity check if we use Reddit data to build sentiment signals for predicting Bitcoin prices.
 
 <p align="center">
-    <img src="images/avg_vol.jpeg" alt="DFD"  width="600" height="320">
+    <img src="images/avg_vol.jpeg" alt="DFD"  width="600" />
  </p>
 
 
@@ -189,7 +189,7 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   - Bitcoin trading volumes, compared to S&P500-related trading volumes shown in red, indicate that Bitcoin does not follow traditional market open and close concentrations.
 
 <p align="center">
-    <img src="images/daily_return.jpeg" alt="DFD"  width="600" height="320">
+    <img src="images/daily_return.jpeg" alt="DFD"  width="600" />
  </p>
 
 
@@ -222,7 +222,7 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 
 
 <p align="center">
-    <img src="images/modelframe.jpg" alt="DFD"  width="600" height="320">
+    <img src="images/modelframe.jpg" alt="DFD" />
  </p>
  
 
@@ -255,7 +255,7 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 
 
 <p align="center">
-    <img src="images/premodel.jpg" alt="DFD"  width="600" height="320">
+    <img src="images/premodel.jpg" alt="DFD" />
  </p>
  
 
@@ -269,7 +269,7 @@ municate relevant model findings and analyses. Our framework has two macro-categ
 
 
 <p align="center">
-    <img src="images/conv.jpg" alt="DFD"  width="600" height="320">
+    <img src="images/conv.jpg" alt="DFD" />
  </p>
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
@@ -286,7 +286,7 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 - Our model fit confirmed a significant upward linear growth trend and daily and weekly seasonalities, as depicted in the charts on your right.
 
 <p align="center">
-    <img src="images/decom.png" alt="bv"  width="600" height="350">
+    <img src="images/decom.png" alt="bv" width="600"/>
  </p>
 
 **Debunked:**
@@ -297,7 +297,7 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had nothing to do with Bitcoin. More importantly, they didn’t seem to have a price impact.
 
 <p align="center">
-    <img src="images/senti_indi.jpeg" alt="bv"  width="600" height="350">
+    <img src="images/senti_indi.jpeg" alt="bv"  width="600"/>
  </p>
  
 **Validated:**
@@ -335,6 +335,13 @@ Whew. We’ve chopped much wood in this section. Hopefully, you’re still awake
 
 **In summary, Enique proves highly effective at role-playing an autonomous financial advisor and servicing customer needs.**
 
+## Trello Status
+
+
+<img src="images/trello-Aug6-2024.png" alt="bv" />
+
+Aug 6, 2024
+
 
 
 ## Future Work
@@ -358,7 +365,7 @@ For our next phase, we plan to work on three core areas:
 ## Our Team
 
 <p align="center">
-    <img src="images/our team.jpg" alt="Our Team" width="600" height="340">
+    <img src="images/our team.jpg" alt="Our Team" width="600" height="340"/>
  </p>
 
 
