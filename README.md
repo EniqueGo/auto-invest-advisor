@@ -300,9 +300,9 @@ Whew. We’ve chopped much wood in this section. Hopefully, you’re still awake
 
 ## Conclusion
 
-**Enique’s business goals were:**
+**Enique’s business goals:**
 
-**More earning and learning. Less spending and tending.**
+  - *More earning and learning. Less spending and tending.*
 
 **Earning and Learning:**
 - We accomplish this by providing market predictions and engineered features that dynamically serve any user’s immediate earning needs.
