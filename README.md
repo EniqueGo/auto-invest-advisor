@@ -78,10 +78,71 @@ These business values create earning opportunities, foster intellectual growth, 
 
 
 ##### Sentiment Analysis:
+
 Data is cleaned and filtered through zero-shot learning.
 Reddit posts are processed using a pre-trained three-category sentiment model to assign positive, negative, and neutral sentiment scores, creating unique features.
 
 ##### Data Management:
+
+
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-1wig">Scheduler Name</th>
+    <th class="tg-1wig">Frequency</th>
+    <th class="tg-1wig">Cron Format</th>
+    <th class="tg-1wig">Note</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">get-reddit-data</td>
+    <td class="tg-0lax">Every 15 mins</td>
+    <td class="tg-0lax">*/15 * * * *</td>
+    <td class="tg-0lax">
+      1. Get and save the raw data; <br />
+      2. Add md5(content) <br />
+      3. Set secret key as an env variable of get-reddit-data-func  <br />
+
+   </td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">discard-irrelevant-data</td>
+    <td class="tg-0lax">Every 30 mins</td>
+    <td class="tg-0lax">*/30 * * * *</td>
+    <td class="tg-0lax">Combine reddit data, and conduct irrelevancy analysis</td>
+  </tr>
+
+  <tr>
+    <td class="tg-0lax">sentiment-analysis</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">Every 30 mins</span></td>
+    <td class="tg-0lax">*/30 * * * *</td>
+    <td class="tg-0lax">Sentiment analysis</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">get-btc-data</td>
+    <td class="tg-0lax">Every 1 hour</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">0 * * * *</span></td>
+    <td class="tg-0lax">Get BTC data from Binance</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">process-btc-data</td>
+    <td class="tg-0lax">Every 1 hour</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">0 * * * *</span></td>
+    <td class="tg-0lax">Calculate all the indicators and other features for modeling</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">get-rep-posts</td>
+    <td class="tg-0lax">Every 30 mins</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">*/30 * * * *</span></td>
+    <td class="tg-0lax">Get representative posts</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">get-senti-indicators</td>
+    <td class="tg-0lax">Every 30 mins</td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal">*/30 * * * *</span></td>
+    <td class="tg-0lax">Calculate sentiment indicators</td>
+  </tr>
+</tbody></table>
+
 - A cloud scheduler regulates the live data process.
 - Historical Data:
   - Bitcoin trade data (last five years, approx. 9.7 MB) and Reddit data (approx. 2.4 TB) are processed using Spark to handle large data sizes.
@@ -92,7 +153,33 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
 - Capable of extracting trend analytics and enriching prediction model inputs to expand advisory offerings.
 - Flexible enough to integrate with third-party models for easy platform integration.
 
+### Data Trend
 
+- **Exploratory Analysis:**
+  - We conducted an extensive exploratory analysis available in our GitHub repository. We will keep it brief here to maintain your interest.
+  - Across our Reddit data, blog post frequency was predictably higher during "normal business" hours, with a notable local spike at 2 am. This spike is likely due to nocturnal users like people sacrificing sleep for late-night exploration.
+
+- **Comparison with Bitcoin Trading Volume:**
+  - Comparing the shape of Reddit post activity to the average Bitcoin trade volume bar chart (top right in purple), we observe a significant overlap in Bitcoin trading volume (also shown in purple).
+  - This comparison is a basic sanity check if we use Reddit data to build sentiment signals for predicting Bitcoin prices.
+
+- **Bitcoin vs. S&P500 Trading Volumes:**
+  - Bitcoin trading volumes, compared to S&P500-related trading volumes shown in red, indicate that Bitcoin does not follow traditional market open and close concentrations.
+
+- **Earnings Opportunity:**
+  - The final chart (bottom right) demonstrates that the earnings opportunity for Bitcoin is much more significant due to its higher volatility. However, the risk-adjusted returns could be more attractive.
+  - These data ingredients offer pretty exciting insights.
+
+
+
+
+
+
+
+
+
+
+----------
 
 ### Model Architecture
 <p align="center">
