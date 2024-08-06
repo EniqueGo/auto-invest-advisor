@@ -31,7 +31,7 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 ## Business Value
 <p align="center">
-    <img src="images/bv.jpg" alt="DFD"  width="600" height="350">
+    <img src="images/bv.jpg" alt="bv"  width="600" height="350">
  </p>
  
 - Superior Autonomy: Enique’s capabilities surpass those of typical human investment advisors.
@@ -55,21 +55,31 @@ These business values create earning opportunities, foster intellectual growth, 
 - More earning and learning; less spending and tending.
 
 
- ???????????
-
-
 ## Technical Sophistication and Efficiency
 
   
-### Data Overview
+###  Data and Processing Overview
+
+- **Data Sources**:
+  - **Bitcoin Market Data**: Sourced from Binance, including prices and trade volume.
+  - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
+
 
 <p align="center">
     <img src="images/dfd.jpg" alt="DFD"  width="600" height="320">
  </p>
 
-#### 
-- TODO3
-- TODO3
+#### Data Ingestion and Processing:
+- **Bitcoin Data**: Prices and trade volume are ingested hourly, cleaned, and processed.
+- **Reddit Data**:
+  - Reddit API limits pull to the last 1000 observations. As post reactions such as upvotes, downvotes, and comments change over time, our API pulls data every fifteen minutes.
+  - Processing logic updates overlapping Reddit data with the latest reaction metrics.
+  - Focuses on text submissions from the subreddit “r/bitcoin,” excluding gifs, videos, and links.
+
+
+
+
+
 
 ### Model Architecture
 <p align="center">
