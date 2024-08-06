@@ -49,7 +49,7 @@ if EXE_ENVIROMENT==ENV_GCP:
 
 # Define global constants
 FORECAST_FREQUENCY = 'H'  # 'D' for daily
-FORECAST_HOURS = 168
+FORECAST_HOURS = 120
 
 DEFAULT_REGRESSION_METRICS = ['mape', 'rmse', 'mae']
 DEFAULT_CLASSIFICATION_METRICS = ['accuracy', 'precision', 'recall', 'f1_score']

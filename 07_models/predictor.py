@@ -24,7 +24,7 @@ from data_feature_selection.feature_selection import FeatureSelector
 from utils.viz import plot_train_validation_loss_values
 from sklearn.metrics import mean_squared_error, mean_absolute_error, mean_absolute_percentage_error
 from utils.metrics_generator import MetricsGenerator
-from datetime import datetime
+from datetime import datetime,timedelta
 import os
 import joblib
 
@@ -45,7 +45,7 @@ class EniqueOracle:
         self.retrain_feature_selection = retrain_feature_selection
         self.check_multicollinearity = check_multicollinearity
         self.model_path = f"{model_dir}/best_enique_model.h5"
-        self.hyperparams_path = "best_hyperparams.pkl"
+        self.hyperparams_path = f"{model_dir}/best_hyperparams.pkl"
         self.__build_baseline_oracle()
 
     def __build_baseline_oracle(self):
@@ -274,7 +274,8 @@ class EniqueOracle:
 
         current_sequence = X_val[-1].reshape(1, X_val.shape[1], X_val.shape[2])
 
-        predict_period_dates = pd.date_range(start=self.df[VAR_DATE].max(), periods=self.n_future, freq=FORECAST_FREQUENCY).tolist()
+        predict_period_dates = pd.date_range(start=pd.to_datetime(self.df[VAR_DATE].max()+timedelta(hours=1)),
+                                             periods=self.n_future, freq=FORECAST_FREQUENCY).tolist()
 
         prediction = []
         for _ in range(self.n_future):
