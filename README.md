@@ -22,39 +22,37 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
  </p>
   
 ## Problem Statement
-**Background**: Retail investors often need more practical guidance on making short-term profits from Bitcoin than traditional investment assets. Bitcoin Financial Advisor services can address this need by extracting prediction signals from Reddit data and customizing recommendations to investors' dynamic needs.
+**Background:** As of 1Q24, the portion of total household wealth made up of financial assets is ~68% -- of which ~40% is invested in corporate equities; and, two-thirds of people across the world invest in the markets. These retail (vs. institutional) investors often need more hands-on guidance on how to aptly invest. 
 
-- **Target Audience**: Enique focuses on individuals who may not have substantial savings but are eager to generate passive income to enjoy life's simple pleasures.
-- **Market Insight**: Two-thirds of the population invests in the markets, yet navigating the financial landscape is daunting and time-consuming—even for industry professionals.
--**Challenges**: Outsourcing financial advice is costly and largely inaccessible to our target users. Additionally, playing the safe, conservative long game does not yield significant immediate-term profits, which is a primary concern for our audience.
+Providing services to such a large number of different individuals at the quality expected in today's world is a challenge that is inefficiently managed. This failure of existing methods to meet client standards have left many non-financial experts under-serviced. 
 
-**Solution**: Enique's business value begins by addressing these pain points.
+**Target Audience**: 
+Enique focuses on individuals who may not have substantial savings but are eager to generate passive income to enjoy life's simple pleasures.
+
+**Challenges**: Navigating the financial landscape is daunting and time-consuming, even for industry professionals. Outsourcing investment advice is costly and largely inaccessible to our target users. Playing the safe, conservative long game does not yield significant immediate-term profits, which is a primary concern for our audience.
+
+**Enique's business value begins by addressing these pain points.**
 
 
 ## Business Value
+**Enique’s capabilities surpass those of typical human investment advisors.**
 <p align="center">
     <img src="images/bv.jpg" alt="bv"/>
  </p>
  
-- **Superior Autonomy**: Enique’s capabilities surpass those of typical human investment advisors.
-  - Human investment advisors provide financial guidance based on standardized strategies and second-hand research. They cannot customize or generate ad-hoc analyses upon request. Additionally, their fee structures often must be revised for individuals with smaller deposits.
+**Pains of Human Services**: Human investment advisors provide financial guidance based on standardized strategies and second-hand research. They cannot customize or generate ad-hoc analyses upon request. Additionally, their fee structures are not worthwhile for individuals with smaller deposits.
+
+**Enique's Capabilities**
 - **Customized Strategies**: Enique delivers specific investment strategies based on its proprietary market predictions.
-Plug-and-Play Tool: Enique can seamlessly integrate any in-house proprietary prediction model, enhancing offerings for downstream clients.
-
-**Illustrative Example:**
-
-- Our team has developed a Bitcoin prediction model integrated as the default within Enique. More details on this feature will be provided later.
-
-**Key Features:**
-
-- Enique performs bespoke research on-the-fly, leveraging its computational power to address client queries immediately.
-- Enique’s prediction models adapt in real time by directly integrating live data.
+- **Plug-and-Play Tool**: Enique can seamlessly integrate any in-house proprietary prediction model, enhancing offerings for downstream clients. 
+  - To illustrate this concretely, our team has developed a *Bitcoin prediction model* integrated as the default within Enique. More details on this feature will be provided later.
+- Enique performs **bespoke research on-the-fly**, leveraging its computational power to address client queries immediately.
+- Enique’s prediction models **adapt in real time** by directly integrating **live data**.
 - Enique is available 24/7, with no fees, and is deposit size agnostic, making it accessible to all income levels.
 
-These business values create earning opportunities, foster intellectual growth, and are cost-efficient in terms of money and time.
+These business values create earning opportunities, foster intellectual growth, and are cost-efficient in terms of money and time. Hence our motto...
 
-**Motto:**
-- More earning and learning; less spending and tending.
+**More earning and learning; less spending and tending.**
 
 
 ## Technical Sophistication and Efficiency
@@ -86,16 +84,20 @@ These business values create earning opportunities, foster intellectual growth, 
   - Reddit API limits pull to the last 1000 observations. As post reactions such as upvotes, downvotes, and comments change over time, our API pulls data every fifteen minutes.
   - Processing logic updates overlapping Reddit data with the latest reaction metrics.
   - Focuses on text submissions from the subreddit “r/bitcoin,” excluding gifs, videos, and links.
+  - Data is cleaned and filtered through zero-shot learning. 
+  
+- **Historical Data of Five Years**
+  - Bitcoin trade data (last five years, approx. 9.7 MB) and Reddit data (approx. 2.4 TB) are processed using Spark to handle large data sizes.
+
+#### Raw Sentiment Scores
+
+- Surviving Reddit posts are processed using a pre-trained three-category sentiment model to assign positive, negative, and neutral sentiment scores. These are further engineered into creating unique features.
+
 
 <p align="center">
     <img src="images/dfd.jpg" alt="DFD">
  </p>
 
-
-##### Sentiment Analysis:
-
-Data is cleaned and filtered through zero-shot learning.
-Reddit posts are processed using a pre-trained three-category sentiment model to assign positive, negative, and neutral sentiment scores, creating unique features.
 
 ##### Data Management:
 
@@ -158,9 +160,7 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
   </tr>
 </tbody></table>
 
-- A cloud scheduler regulates the live data process.
-- Historical Data:
-  - Bitcoin trade data (last five years, approx. 9.7 MB) and Reddit data (approx. 2.4 TB) are processed using Spark to handle large data sizes.
+
 
 ##### Storage and Scalability:
 - All processed data is stored in Google Cloud Storage Buckets.
@@ -170,35 +170,37 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
 
 ### Data Trend
 
-- **Exploratory Analysis:**
-  - We conducted an extensive exploratory analysis available in our GitHub repository. We will keep it brief here to maintain your interest.
-  - Across our Reddit data, blog post frequency was predictably higher during "normal business" hours, with a notable local spike at 2 am. This spike is likely due to nocturnal users like people sacrificing sleep for late-night exploration.
+**Exploratory Analysis:**
+- We conducted an extensive exploratory analysis available in our GitHub repository. *Reference 04_EDA.*
+
+**Quick Preview**
+Across our Reddit data, blog post frequency was predictably higher during "normal business" hours, with a notable local spike at 2 am. This spike is likely due to nocturnal users like people sacrificing sleep for late-night exploration.
  
 <p align="center">
     <img src="images/avg_hr.jpeg" alt="DFD"  width="600" />
  </p>
 
 
-- **Comparison with Bitcoin Trading Volume:**
-  - Comparing the shape of Reddit post activity to the average Bitcoin trade volume bar chart (top right in purple), we observe a significant overlap in Bitcoin trading volume (also shown in purple).
-  - This comparison is a basic sanity check if we use Reddit data to build sentiment signals for predicting Bitcoin prices.
+**Comparison with Bitcoin Trading Volume:**
+- Comparing the shape of Reddit post activity to the average Bitcoin trade volume bar chart (top right in purple), we observe a significant overlap in Bitcoin trading volume (also shown in purple).
+- This comparison is a basic sanity check if we use Reddit data to build sentiment signals for predicting Bitcoin prices.
 
 <p align="center">
     <img src="images/avg_vol.jpeg" alt="DFD"  width="600" />
  </p>
 
 
-- **Bitcoin vs. S&P500 Trading Volumes:**
-  - Bitcoin trading volumes, compared to S&P500-related trading volumes shown in red, indicate that Bitcoin does not follow traditional market open and close concentrations.
+**Bitcoin vs. S&P500 Trading Volumes:**
+- Bitcoin trading volumes, compared to S&P500-related trading volumes shown in red, indicate that Bitcoin does not follow traditional market open and close concentrations.
 
 <p align="center">
     <img src="images/daily_return.jpeg" alt="DFD"  width="600" />
  </p>
 
 
-- **Earnings Opportunity:**
-  - The final chart (bottom right) demonstrates that the earnings opportunity for Bitcoin is much more significant due to its higher volatility. However, the risk-adjusted returns could be more attractive.
-  - These data ingredients offer pretty exciting insights.
+**Earnings Opportunity:**
+- The final chart demonstrates that the earnings opportunity for Bitcoin is much more significant due to its higher volatility. However, the risk-adjusted returns could be more attractive.
+
 
 ###  Model Framework
 
@@ -220,13 +222,15 @@ Our model framework has two macro-categories of models: **predictive** and **con
 **Layers of Prediction Models:**
 
 1. **Baseline Prophet Model:**
-   - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
-   - During training, we input various combinations of engineered features as regressors, but none were beneficial at this stage.
-   - Outputs include baseline price, trend, seasonality, and a prediction residual.
+- The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
+ - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
+ - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
 
 2. **Sentiment Neural Network:**
-   - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
-   - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+- The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
+ - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+ - Form: The model takes on the form of double-double LSTM and Dropout layers of ____ nodes each. 
+
 
 **Why Focus on Bitcoin:**
 - Unlike traditional equities, Bitcoin has little to no fundamental valuation and is driven by technical factors and essentially sentiment. This makes it an ideal target for a tool to ingest big data and run deep learning models autonomously.
@@ -234,7 +238,6 @@ Our model framework has two macro-categories of models: **predictive** and **con
 **Model Training and Validation:**
 - Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data.
 - This results in our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).
-
 
 
 
