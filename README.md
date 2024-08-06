@@ -168,6 +168,7 @@ These business values create earning opportunities, foster intellectual growth, 
 - Capable of extracting trend analytics and enriching prediction model inputs to expand advisory offerings.
 - Flexible enough to integrate with third-party models for easy platform integration.
 
+
 ### Data Trend
 
 **Exploratory Analysis:**
@@ -202,6 +203,11 @@ Across our Reddit data, blog post frequency was predictably higher during "norma
 - The final chart demonstrates that the earnings opportunity for Bitcoin is much more significant due to its higher volatility. However, the risk-adjusted returns could be more attractive.
 
 
+#### Data Challenges
+
+This data processing was one of the most difficult challenges our team faced. Despite being popular subjects, bitcoin and reddit data sources often require paid subscriptions for live and full information. On the other hand, historical data sources could be found rather easily but posed great adversities in handling such big data. Successfully processing all the historical reddit data took several weeks within our alloted Capstone project time. We learned much about using Spark and other big data tools to overcome this hurdle.
+
+
 ###  Model Framework
 
 Our ultimate goal is to provide actionable investment advice to the average person—the little guy who lacks extensive financial knowledge. Achieving this involves two main components: having our market prediction and conversing with the user to communicate relevant model findings and analyses.
@@ -222,14 +228,22 @@ Our model framework has two macro-categories of models: **predictive** and **con
 **Layers of Prediction Models:**
 
 1. **Baseline Prophet Model:**
+Overview:
 - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
- - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
- - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
+  - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
+  - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
+Performance Results:
+- 
 
 2. **Sentiment Neural Network:**
+Overview:
 - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
- - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
- - Form: The model takes on the form of double-double LSTM and Dropout layers of ____ nodes each. 
+  - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+Form
+ - Form:
+<p align="center">
+    <img src="images/lstm_layer_map.jpeg" alt="bv"/>
+ </p>
 
 
 **Why Focus on Bitcoin:**
@@ -265,7 +279,7 @@ We focus on model findings and the story they tell.
 Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic trends in Bitcoin persist, indicating some baseline and seasonality.
 
 **Validated:**
-- Our model fit confirmed a significant upward linear growth trend and daily and weekly seasonalities, as depicted in the charts on your right.
+- Our model fit confirmed a significant upward linear growth trend and daily and weekly seasonalities, as depicted in the charts .
 
 <p align="center">
     <img src="images/decom.png" alt="bv" width="600"/>
