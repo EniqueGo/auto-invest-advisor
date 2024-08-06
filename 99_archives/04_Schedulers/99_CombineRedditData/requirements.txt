@@ -1,0 +1,7 @@
+functions-framework==3.*
+pandas
+praw==7.7.1
+prawcore
+fsspec
+google-cloud-storage
+gcsfs

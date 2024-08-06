@@ -1,0 +1,32 @@
+gcloud dataproc clusters export stonkgo-cluster \
+    --destination gs://stonkgo2-spark-bucket/cluster-settings/cluster-v7.yaml  \
+    --region us-central1
+
+
+
+
+cat <<EOF > environment-variables-file
+DATAPROC_CONFIGS=gs://stonkgo2-spark-bucket/cluster-settings/cluster-v7.yaml
+NOTEBOOKS_LOCATION=gs://stonkgo2-spark-bucket
+DATAPROC_LOCATIONS_LIST=b,c
+EOF
+
+
+
+gsutil cp environment-variable-filename gs://stonkgo2-spark-bucket
+
+
+
+
+CLUSTER_NAME=stonkgo-cluster
+REGION=us-central1
+
+ gcloud beta dataproc clusters create ${CLUSTER_NAME} \
+     --region ${REGION} \
+     --metadata 'PIP_PACKAGES=google-cloud-storage spark-nlp==5.3.3' \
+     --worker-machine-type e2-standard-8 \
+     --num-workers 2 \
+     --image-version 2.2.16-debian12 \
+     --initialization-actions gs://dataproc-initialization-actions/python/pip-install.sh \
+     --optional-components=JUPYTER,ANACONDA \
+     --enable-component-gateway

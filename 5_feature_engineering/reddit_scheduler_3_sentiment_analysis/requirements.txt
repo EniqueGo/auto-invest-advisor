@@ -1,0 +1,11 @@
+functions-framework==3.*
+pandas
+fsspec
+google-cloud-storage
+gcsfs
+torch==2.1
+transformers
+pandas
+pyarrow
+fastparquet
+pyspark

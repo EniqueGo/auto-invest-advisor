@@ -1,0 +1,105 @@
+---
+projectId: stonkgo-proj2
+clusterName: stonkgo-cluster
+config:
+  configBucket: dataproc-staging-us-central1-261514793566-wojc2xgn
+  tempBucket: dataproc-temp-us-central1-261514793566-qhpm87sl
+  gceClusterConfig:
+    zoneUri: https://www.googleapis.com/compute/v1/projects/stonkgo-proj2/zones/us-central1-b
+    serviceAccountScopes:
+      - https://www.googleapis.com/auth/cloud-platform
+    subnetworkUri: https://www.googleapis.com/compute/v1/projects/stonkgo-proj2/regions/us-central1/subnetworks/default
+    internalIpOnly: true
+    shieldedInstanceConfig:
+      enableSecureBoot: false
+      enableVtpm: false
+      enableIntegrityMonitoring: false
+  masterConfig:
+    numInstances: 1
+    instanceNames:
+      - stonkgo-cluster-m
+    imageUri: https://www.googleapis.com/compute/v1/projects/cloud-dataproc/global/images/dataproc-2-2-deb12-20240509-165100-rc01
+    machineTypeUri: https://www.googleapis.com/compute/v1/projects/stonkgo-proj2/zones/us-central1-b/machineTypes/n2-standard-8
+    diskConfig:
+      bootDiskSizeGb: 500
+      bootDiskType: pd-balanced
+      localSsdInterface: SCSI
+    minCpuPlatform: AUTOMATIC
+    preemptibility: NON_PREEMPTIBLE
+  softwareConfig:
+    imageVersion: 2.2.16-debian12
+    properties:
+      capacity-scheduler:yarn.scheduler.capacity.resource-calculator: org.apache.hadoop.yarn.util.resource.DominantResourceCalculator
+      capacity-scheduler:yarn.scheduler.capacity.root.default.ordering-policy: fair
+      core:fs.gs.block.size: '134217728'
+      core:fs.gs.metadata.cache.enable: 'false'
+      core:hadoop.ssl.enabled.protocols: TLSv1,TLSv1.1,TLSv1.2
+      dataproc:dataproc.allow.zero.workers: 'true'
+      distcp:mapreduce.map.java.opts: "-Xmx768m"
+      distcp:mapreduce.map.memory.mb: '1024'
+      distcp:mapreduce.reduce.java.opts: "-Xmx768m"
+      distcp:mapreduce.reduce.memory.mb: '1024'
+      hadoop-env:HADOOP_DATANODE_OPTS: "-Xmx512m"
+      hdfs:dfs.datanode.address: 0.0.0.0:9866
+      hdfs:dfs.datanode.http.address: 0.0.0.0:9864
+      hdfs:dfs.datanode.https.address: 0.0.0.0:9865
+      hdfs:dfs.datanode.ipc.address: 0.0.0.0:9867
+      hdfs:dfs.namenode.handler.count: '20'
+      hdfs:dfs.namenode.http-address: 0.0.0.0:9870
+      hdfs:dfs.namenode.https-address: 0.0.0.0:9871
+      hdfs:dfs.namenode.lifeline.rpc-address: stonkgo-cluster-m:8050
+      hdfs:dfs.namenode.secondary.http-address: 0.0.0.0:9868
+      hdfs:dfs.namenode.secondary.https-address: 0.0.0.0:9869
+      hdfs:dfs.namenode.service.handler.count: '10'
+      hdfs:dfs.namenode.servicerpc-address: stonkgo-cluster-m:8051
+      mapred-env:HADOOP_JOB_HISTORYSERVER_HEAPSIZE: '4000'
+      mapred:mapreduce.job.maps: '21'
+      mapred:mapreduce.job.reduce.slowstart.completedmaps: '0.95'
+      mapred:mapreduce.job.reduces: '7'
+      mapred:mapreduce.jobhistory.recovery.store.class: org.apache.hadoop.mapreduce.v2.hs.HistoryServerLeveldbStateStoreService
+      mapred:mapreduce.map.cpu.vcores: '1'
+      mapred:mapreduce.map.java.opts: "-Xmx2828m"
+      mapred:mapreduce.map.memory.mb: '3536'
+      mapred:mapreduce.reduce.cpu.vcores: '1'
+      mapred:mapreduce.reduce.java.opts: "-Xmx2828m"
+      mapred:mapreduce.reduce.memory.mb: '3536'
+      mapred:mapreduce.task.io.sort.mb: '256'
+      mapred:yarn.app.mapreduce.am.command-opts: "-Xmx2828m"
+      mapred:yarn.app.mapreduce.am.resource.cpu-vcores: '1'
+      mapred:yarn.app.mapreduce.am.resource.mb: '3536'
+      spark-env:SPARK_DAEMON_MEMORY: 4000m
+      spark:spark.driver.maxResultSize: 4096m
+      spark:spark.driver.memory: 8192m
+      spark:spark.executor.cores: '4'
+      spark:spark.executor.instances: '2'
+      spark:spark.executor.memory: 12859m
+      spark:spark.executorEnv.OPENBLAS_NUM_THREADS: '1'
+      spark:spark.scheduler.mode: FAIR
+      spark:spark.sql.cbo.enabled: 'true'
+      spark:spark.sql.optimizer.runtime.bloomFilter.join.pattern.enabled: 'true'
+      spark:spark.ui.port: '0'
+      spark:spark.yarn.am.memory: 640m
+      yarn-env:YARN_NODEMANAGER_HEAPSIZE: '3276'
+      yarn-env:YARN_RESOURCEMANAGER_HEAPSIZE: '4000'
+      yarn-env:YARN_TIMELINESERVER_HEAPSIZE: '4000'
+      yarn:yarn.nodemanager.address: 0.0.0.0:8026
+      yarn:yarn.nodemanager.resource.cpu-vcores: '8'
+      yarn:yarn.nodemanager.resource.memory-mb: '28288'
+      yarn:yarn.resourcemanager.decommissioning-nodes-watcher.decommission-if-no-shuffle-data: 'true'
+      yarn:yarn.resourcemanager.nodemanager-graceful-decommission-timeout-secs: '86400'
+      yarn:yarn.scheduler.maximum-allocation-mb: '28288'
+      yarn:yarn.scheduler.minimum-allocation-mb: '1'
+    optionalComponents:
+      - JUPYTER
+  encryptionConfig: {}
+  securityConfig:
+    kerberosConfig: {}
+  endpointConfig: {}
+status:
+  state: CREATING
+  stateStartTime: '2024-05-17T06:31:42.812217Z'
+clusterUuid: d0cd2d01-25c1-469b-835a-6360895b1b96
+labels:
+  goog-dataproc-cluster-name: stonkgo-cluster
+  goog-dataproc-cluster-uuid: d0cd2d01-25c1-469b-835a-6360895b1b96
+  goog-dataproc-location: us-central1

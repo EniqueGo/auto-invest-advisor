@@ -1,0 +1,10 @@
+functions-framework==3.*
+google-cloud-storage
+pandas
+#ktrain
+numpy
+torch==2.1
+fsspec
+gcsfs
+pyarrow
+fastparquet

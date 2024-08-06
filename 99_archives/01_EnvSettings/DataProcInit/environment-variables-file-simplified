@@ -1,0 +1,3 @@
+DATAPROC_CONFIGS=gs://stonkgo2-spark-bucket/cluster-settings/cluster-v8-simplified.yaml
+NOTEBOOKS_LOCATION=gs://stonkgo2-spark-bucket
+DATAPROC_LOCATIONS_LIST=b,c

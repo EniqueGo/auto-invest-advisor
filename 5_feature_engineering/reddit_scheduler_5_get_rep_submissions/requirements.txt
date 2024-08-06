@@ -1,0 +1,11 @@
+functions-framework==3.*
+
+pandas
+fsspec
+google-cloud-storage
+gcsfs
+
+pyarrow
+fastparquet
+
+numpy

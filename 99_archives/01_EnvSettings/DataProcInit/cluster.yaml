@@ -1,0 +1,23 @@
+# cluster.yaml
+# Dataproc cluster configuration file
+clusterName: stonkgo-cluster
+projectId: stonkgo-proj2
+config:
+  gceClusterConfig:
+    zoneUri: us-central1-b
+  masterConfig:
+    numInstances: 1
+    machineTypeUri: n2-standard-4
+  workerConfig:
+    numInstances: 2
+    machineTypeUri: n2-standard-4
+  softwareConfig:
+    imageVersion: 2.0-debian10
+    properties:
+      spark:spark.jars.packages: com.johnsnowlabs.nlp:spark-nlp_2.12:5.3.3
+  initializationActions:
+    - 'gs://stonkgo2-spark-bucket/cluster-settings/init-script.sh'
+  optionalComponents:
+    - ANACONDA
+  endpointConfig:
+    enableHttpPortAccess: true
