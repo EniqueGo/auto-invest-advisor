@@ -158,13 +158,28 @@ Reddit posts are processed using a pre-trained three-category sentiment model to
 - **Exploratory Analysis:**
   - We conducted an extensive exploratory analysis available in our GitHub repository. We will keep it brief here to maintain your interest.
   - Across our Reddit data, blog post frequency was predictably higher during "normal business" hours, with a notable local spike at 2 am. This spike is likely due to nocturnal users like people sacrificing sleep for late-night exploration.
+ 
+<p align="center">
+    <img src="images/avg_hr.jpg" alt="DFD"  width="600" height="320">
+ </p>
+
 
 - **Comparison with Bitcoin Trading Volume:**
   - Comparing the shape of Reddit post activity to the average Bitcoin trade volume bar chart (top right in purple), we observe a significant overlap in Bitcoin trading volume (also shown in purple).
   - This comparison is a basic sanity check if we use Reddit data to build sentiment signals for predicting Bitcoin prices.
 
+<p align="center">
+    <img src="images/avg_vol.jpg" alt="DFD"  width="600" height="320">
+ </p>
+
+
 - **Bitcoin vs. S&P500 Trading Volumes:**
   - Bitcoin trading volumes, compared to S&P500-related trading volumes shown in red, indicate that Bitcoin does not follow traditional market open and close concentrations.
+
+<p align="center">
+    <img src="images/daily_return.jpg" alt="DFD"  width="600" height="320">
+ </p>
+
 
 - **Earnings Opportunity:**
   - The final chart (bottom right) demonstrates that the earnings opportunity for Bitcoin is much more significant due to its higher volatility. However, the risk-adjusted returns could be more attractive.
