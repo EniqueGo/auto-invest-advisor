@@ -21,15 +21,25 @@ screenshot of UI
 
 ## Organization and Documentation
 ### Folder Hierarchy
+- TODO1
+- TODO1
 
 
 ## Technical Sophistication and Efficiency
 ### System Architecture
+- TODO2
+- TODO2
+  
 ### Data Flow Diagram (DFD)
 
 <p align="center">
     <img src="images/dfd.jpg" alt="DFD"  width="600" height="350">
  </p>
+
+### Key Features
+- TODO3
+- TODO3
+ 
 ## Reproducibility
 
 ### Package Requirements
