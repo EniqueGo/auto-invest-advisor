@@ -118,7 +118,7 @@ These business values create earning opportunities, foster intellectual growth, 
 
 **More earning and learning; less spending and tending.**
 
-<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 
 <div align="center">
   
@@ -418,7 +418,7 @@ Performance Results:
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
-<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 
 <div align="center">
   
@@ -505,7 +505,7 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 **Debunked:**
 - Conversational AI struggles with accuracy when integrated datasets are numeric due to the relative lack of richer context. However, we overcame this by using restrictive function calling, keeping Enique grounded in our data and prediction model analyses suite.
 
-<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 
 
 <div align="center">
@@ -529,7 +529,7 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 
 **In summary, Enique proves highly effective at role-playing an autonomous financial advisor and servicing customer needs.**
 
-<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 
 <div align="center">
   
@@ -566,5 +566,5 @@ For our next phase, we plan to work on three core areas:
     <img src="images/our team.jpg" alt="Our Team" width="600" height="340"/>
  </p>
 
-<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 
