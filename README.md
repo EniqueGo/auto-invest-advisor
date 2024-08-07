@@ -78,7 +78,7 @@ These business values create earning opportunities, foster intellectual growth, 
     <img src="images/dfd.jpg" alt="DFD">
  </p>
 
-#### Data Sources**
+#### Data Sources
   - **Bitcoin Market Data**: Sourced from Binance, including prices and trade volume.
   - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
 
@@ -222,10 +222,6 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
 #### Predictive Modeling
 
-<p align="center">
-    <img src="images/premodel1.jpg" alt="DFD" />
- </p>
-
 **Layers of Prediction Models:**
 
 1. **Baseline Prophet Model:**
@@ -233,26 +229,29 @@ Our model framework has two macro-categories of models: **predictive** and **con
     <img src="images/premodel.jpg" alt="DFD" />
  </p>
 
-Overview:
-- The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
-  - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
-  - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
+  Overview:
+    - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
+    - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
+    - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
 
-Performance Results:
-- 
+  Performance Results:
+    - TO DOOOO !!!!!!!!!!!!!!!!!!!!!!!
 
-Analysis:
-Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance overfitting vs. capturing such volatile price action. 
-
-Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
+  Analysis:
+    - Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance overfitting vs. capturing such volatile price action. 
+    - Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
 
 
 2. **Sentiment Neural Network:**
-Overview:
-- The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
-- The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+<p align="center">
+    <img src="images/premodel1.jpg" alt="DFD" />
+ </p>
+  
+  Overview:
+    - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
+    - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
 
-Form
+  Form
 <p align="center">
     <img src="images/lstm_layer_map.jpeg" alt="lstm_layer_map"/>
  </p>
