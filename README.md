@@ -235,10 +235,11 @@ Our model framework has two macro-categories of models: **predictive** and **con
     - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
 
   Performance Results:
-    - TO DOOOO !!!!!!!!!!!!!!!!!!!!!!!
+    - Backtesting MAPE = 6.3% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024.
+    - *For more details, reference 05_results folder*
 
   Analysis:
-    - Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance overfitting vs. capturing such volatile price action. 
+    - Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance over-fitting vs. capturing such volatile price action. 
     - Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
 
 
@@ -256,6 +257,13 @@ Our model framework has two macro-categories of models: **predictive** and **con
     <img src="images/lstm_layer_map.jpeg" alt="lstm_layer_map"/>
  </p>
 
+  Performance Results:
+    - Backtesting MAPE = 5.88%% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024. 
+    - Backtesting MAPE per hour bucket is lowest at 6th hour (4.18%) and highest at the 116th hour (7.43%).
+    - Backtesting Standard Error = $1430.
+    - Backtesting Average RMSPE = 6.37%.
+    - *For more details, reference 05_results folder*
+
 
 **Why Focus on Bitcoin:**
 - Unlike traditional equities, Bitcoin has little to no fundamental valuation and is driven by technical factors and essentially sentiment. This makes it an ideal target for a tool to ingest big data and run deep learning models autonomously.
@@ -263,21 +271,23 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
 
 **Model Tuning, Training, Validation:**
-Overview. Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data. Target metric was MAPE.
 
-Hyperparameters:
-  - Prophet: {'weekly_seasonality': True, 'interval_width': 0.95, 'seasonality_mode': 'multiplicative', 'changepoint_prior_scale': 0.6, 'seasonality_prior_scale': 0.01, 'changepoint_range': 0.76}
-  - LSTM: {'units': 512, 'dropout_rate': 0.5, 'learning_rate': 0.004, 'epochs': 100, 'batch_size': 32, 'n_past': 360, 'patience': 10}. 
+  Overview. Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data. Target metric was MAPE.
 
-Training: 
-Training data window for backtesting: 180 days. For historical analysis, we used approximately five years.
+  Hyperparameters:
+    - Prophet: {'weekly_seasonality': True, 'interval_width': 0.95, 'seasonality_mode': 'multiplicative', 'changepoint_prior_scale': 0.6, 'seasonality_prior_scale': 0.01, 'changepoint_range': 0.76}
+    - LSTM: {'units': 512, 'dropout_rate': 0.5, 'learning_rate': 0.004, 'epochs': 100, 'batch_size': 32, 'n_past': 360, 'patience': 10}. 
 
-Validation:
-Out-of-sample validation and testing was performed across multiple time windows. When backtesting, we focused on the July 1, 2024 to July 20th 2024 time period stepping forward an hour at a time.  When running on full historical data, 80/20 and cross validation were employed. 
+  Training:
+    - Backtesting: 180 days. 
+    - Historical analysis: ~5 years.
 
+  Validation:
+    - Out-of-sample validation and testing was performed across multiple time windows. 
+    - When backtesting on recent data, we focused on the July 1, 2024 to July 20th 2024 time period stepping forward an hour at a time. 
+    - When running on full historical data, 80/20 and cross-validation were employed. 
 
-
-*This results in our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).*
+*This results comprise of our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).*
 
 
 #### Conversational Model (Gemini AI Model)
@@ -285,10 +295,14 @@ Out-of-sample validation and testing was performed across multiple time windows.
 <p align="center">
     <img src="images/conv.jpg" alt="DFD" />
  </p>
+ <p align="center">
+    <img src="images/convo_demo_simplifyit.png" alt="DFD" />
+ </p>
 
-- **Interpret User Requests:** Gemini interprets client needs through the UI chatbox.
-- **Prompt Engineering:** Trained to retrieve specific items from the prediction model and data outputs, repackaging them into layperson's terms for the user.
-- The final product is displayed in our UI tool, thanks to multiple rounds of UX testing with the help of friends and family.
+  - **Backbone of Model**. Here the framework or bones of the model are Google’s Gemini, which interpret the client’s needs provided through the UI chatbox. 
+  - **Training Gemini**. We’ve added meat to those bones through *prompt engineering* and specific *function calls*. So Enique can retrieve relevant numeric data from the prediction and feature engineering results. Then bolster with a qualitative layman narrative without stripping away the essential numbers.
+  - **Testing Model**. Special shoutout to our friends and family that begrudgingly endured multiple rounds of UX testing through Enique’s development. 
+
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
@@ -305,12 +319,12 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 - Our model-fit confirmed significant growth trends; and daily, weekly seasonalities -- depicted in the charts on your right.
 - Our data was scaled before modeling. So keep in mind the y-axis values are in units of standard deviation.
 
-** Prophet Model Decomposition for 180 Days*
+*Prophet Model Decomposition for 180 Days*
 <p align="center">
     <img src="images/decom.png" alt="bv" width="600"/>
  </p>
 
- ** Prophet Model Decomposition for Five Years*
+ *Prophet Model Decomposition for Five Years*
  <p align="center">
     <img src="images/prophet_decomp_5y.jpeg" alt="prophet_decomp_5" width="600"/>
  </p>
@@ -320,36 +334,57 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 - Hourly patterns suggest minor peaks in the early mornings. Another peak right when most people in the US get off work. Perhaps the happy hour gossip and a little liquid courage. However, we do recognize the magnitude of the daily seasonality is minor vs. the weekly.
 
 **Debunked:**
-- One assumption we debunked was the multiplicative effect. Though market volatility tends to beget volatility, such a signal was negligible or at least muted in the long run.
+- One assumption we debunked was the multiplicative effect. 
+- Originally we’d believed price volatility tends to beget volatility, and volatility would be level bias. Think of how markets get choppier as prices fall. But for bitcoin, it seems such signal was negligible. It’s possible that being a sentiment driven asset, its volatile in a surge whether it be up or down. 
 
 ### Sentiment Signal
 
-For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had nothing to do with Bitcoin. More importantly, they didn’t seem to have a price impact.
+For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had either nothing to do with Bitcoin; or, little to insinuate taking trade action.
 
+Check out this example on the right. This got a high upvote count and ratio, but was blocked by our irrelevancy filter. It’s a link to a very small-time Bitcoin documentary that garnered most its views six years ago. From our detective work, we deemed it unlikely to be impactful around the time of post. 
 <p align="center">
-    <img src="images/.jpeg" alt="bv"  width="600"/>
+    <img src="images/reddit_post.jpg" alt="bv"  width="600"/>
  </p>
+
+
+Now what if we could find relevant posts, with strong reactions, that had consensus in sentiment? Then the optically tempting chart below showing sentiment leading price action might be significant. 
+
 <p align="center">
     <img src="images/senti_indi.jpeg" alt="bv"  width="600"/>
  </p>
 
 **Validated:**
-- If we could find relevant posts with consensus in sentiment, sentiment could be a leading indicator.
+- We used prediction error as our metric, and loosely validated that sentiment could be a leading indicator and not just a post-price-FOMO-feeling. 
 
 **Debunked:**
-- The relationship between sentiment and price is not generalizable. It is convoluted, and their causation direction is highly circumstantial.
+- We say loosely because one of the more naive assumptions we debunked was that the relationship between sentiment and price is generalizable. 
+- It is, in fact, convoluted. Causation direction is highly circumstantial. And this made performance attribution particularly tricky.
 
 ### Conversational AI
 
-One of the core assumptions that made Enique possible was that modern-day conversational AI, in our case, Google Gemini, could role-play as an investment advisor for non-financial retail clients. Gemini had enough pre-trained knowledge to range across any technical level.
+**Assumptions**
+- One of the core assumptions that made Enique possible was that modern-day conversational AI, in our case, Google Gemini, could role-play as an investment advisor for non-financial retail clients. 
+- Conversational AI could fetch the correct integrated data…AND properly analyze it to create a qualitative narrative. Think of this as translating from user language to numbers language back to user language.
+
 
 **Validated:**
-- A conversational AI could interpret user prompts into user needs and fetch the correct information to satisfy that need. Direct data integration prevents hallucination. Enique stands out by integrating datasets that can be entirely numerical without relying on third-party qualitative analysis.
+- We were pleased to find in fact Gemini had enough pre-trained knowledge to range across most technical levels. 
+<p align="center">
+    <img src="images/senti_indi.jpeg" alt="bv"  width="600"/>
+ </p>
+
+- A conversational AI could interpret user prompts into user needs and fetch the correct information to satisfy that need. See our example here on the right. When pasted about past Bitcoin momentum, Enique’s Conversational Model extrapolates what sort of data might be pertinent to the topic and returns layman understandable advice backed with numbers. 
+<p align="center">
+    <img src="images/senti_indi.jpeg" alt="bv"  width="600"/>
+ </p>
+
+- 
+- 
+- 
+- Direct data integration prevents hallucination. Enique stands out by integrating datasets that can be entirely numerical without relying on third-party qualitative analysis.
 
 **Debunked:**
 - Conversational AI struggles with accuracy when integrated datasets are numeric due to the relative lack of richer context. However, we overcame this by using restrictive function calling, keeping Enique grounded in our data and prediction model analyses suite.
-
-Whew. We’ve chopped much wood in this section. Hopefully, you’re still awake. Now, let’s step back from the trees to see the forest.
 
 
 ## Conclusion
