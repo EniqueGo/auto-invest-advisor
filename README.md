@@ -170,11 +170,10 @@ These business values create earning opportunities, foster intellectual growth, 
 - Flexible enough to integrate with third-party models for easy platform integration.
 
 
-### Definition of Variables @tod0
+### Definition of Variables 
 
- <p align="center">
-    <img src="images/avg_hr.jpeg" alt="Definition of Variables"  width="600" />
- </p>
+
+@todo
 
 
 ### Data Trend
