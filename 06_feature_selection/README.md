@@ -4,6 +4,8 @@ This folder contains all resources related to the feature selection process, inc
 - **reddit_preprocess_feature_selection_v2.0.0a1.ipynb:** A Jupyter notebook documenting the preprocessing and feature selection steps applied to Reddit data, including exploratory data analysis and feature selection criteria.
 
 
+The following table defines the final selected features selected for Enique's in-house modeling. For more details on all variables, please review the code files in this folder.
+
 
 | **Selected Feature**                      | **Description**                                                                                                  |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------|
