@@ -42,7 +42,7 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
    - [Data Ingestion, Processing](#data-ingestion-processing)
    - [Data Management](#data-management)
    - [Data Trends](#data-trends)
-   - [Challenges](#challenges)
+   - [Data Adversities](#data_adversities)
 
 4. [Methodology and Model Framework](#methodology-and-model-framework)
    - [Baseline Prophet Model](#baseline-prophet-model)
@@ -296,7 +296,7 @@ Across our Reddit data, blog post frequency was predictably higher during "norma
 
 
 
-## Challenges
+## Data Adversities
 
 
 This data processing was one of the most difficult challenges our team faced. Despite being popular subjects, bitcoin and reddit data sources often require paid subscriptions for live and full information. On the other hand, historical data sources could be found rather easily but posed great adversities in handling such big data. Successfully processing all the historical reddit data took several weeks within our alloted Capstone project time. We learned much about using Spark and other big data tools to overcome this hurdle.
