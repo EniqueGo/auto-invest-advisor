@@ -225,6 +225,7 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
 #### Predictive Modeling
 
+
 **Layers of Prediction Models:**
 
 1. **Baseline Prophet Model:**
