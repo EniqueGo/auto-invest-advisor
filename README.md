@@ -67,19 +67,19 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 
 ### Background 
-[Back to top](#table-of-contents)
+
 
 As of 1Q24, the portion of total household wealth made up of financial assets is ~68% -- of which ~40% is invested in corporate equities; and, two-thirds of people across the world invest in the markets. These retail (vs. institutional) investors often need more hands-on guidance on how to aptly invest. 
 
 Providing services to such a large number of different individuals at the quality expected in today's world is a challenge that is inefficiently managed. This failure of existing methods to meet client standards have left many non-financial experts under-serviced. 
 
 ### Target Audience
-[Back to top](#table-of-contents)
+
 
 Enique focuses on individuals who may not have substantial savings but are eager to generate passive income to enjoy life's simple pleasures.
 
 ### Challenges
-[Back to top](#table-of-contents)
+
 
 Navigating the financial landscape is daunting and time-consuming, even for industry professionals. Outsourcing investment advice is costly and largely inaccessible to our target users. Playing the safe, conservative long game does not yield significant immediate-term profits, which is a primary concern for our audience.
 
@@ -91,7 +91,7 @@ Navigating the financial landscape is daunting and time-consuming, even for indu
 
 </div>
 
-[Back to top](#table-of-contents)
+
 
 **Enique’s capabilities surpass those of typical human investment advisors.**
 <p align="center">
@@ -99,12 +99,12 @@ Navigating the financial landscape is daunting and time-consuming, even for indu
  </p>
 
 ### Pains of Human Services
-[Back to top](#table-of-contents)
+
 
 Human investment advisors provide financial guidance based on standardized strategies and second-hand research. They cannot customize or generate ad-hoc analyses upon request. Additionally, their fee structures are not worthwhile for individuals with smaller deposits.
 
 ### Enique’s Capabilities
-[Back to top](#table-of-contents)
+
 
 - **Customized Strategies**: Enique delivers specific investment strategies based on its proprietary market predictions.
 - **Plug-and-Play Tool**: Enique can seamlessly integrate any in-house proprietary prediction model, enhancing offerings for downstream clients. 
@@ -118,6 +118,8 @@ These business values create earning opportunities, foster intellectual growth, 
 
 **More earning and learning; less spending and tending.**
 
+<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 <div align="center">
   
 # Logistics
@@ -125,7 +127,7 @@ These business values create earning opportunities, foster intellectual growth, 
 </div>
 
 ## Package Requirements
-[Back to top](#table-of-contents)
+
 
 -   OS: Debian 11
 -   Python: 3.10.14; 3.11.2
@@ -144,27 +146,27 @@ These business values create earning opportunities, foster intellectual growth, 
 # Data and Processing
 </div>
 
-[Back to top](#table-of-contents)
+
 
 <p align="center">
     <img src="images/dfd.jpg" alt="DFD">
  </p>
 
 ## Data Sources
-[Back to top](#table-of-contents)
+
 
   - **Bitcoin Market Data**: Sourced from Binance, including prices and trade volume.
   - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
 
 ## Definition of Variables
-[Back to top](#table-of-contents)
+
 
 Refer to the [Definition of Variables](./03_data_processing/README.md) for more details.
 
 
 
 ## Data Ingestion, Processing
-[Back to top](#table-of-contents)
+
 
 - **Bitcoin Data**: Prices and trade volume are ingested hourly, cleaned, and processed.
 - **Reddit Data**:
@@ -177,7 +179,7 @@ Refer to the [Definition of Variables](./03_data_processing/README.md) for more 
   - Bitcoin trade data (last five years, approx. 9.7 MB) and Reddit data (approx. 2.4 TB) are processed using Spark to handle large data sizes.
 
 #### Raw Sentiment Scores
-[Back to top](#table-of-contents)
+
 
 - Surviving Reddit posts are processed using a pre-trained three-category sentiment model to assign positive, negative, and neutral sentiment scores. These are further engineered into creating unique features.
 
@@ -185,7 +187,7 @@ Refer to the [Definition of Variables](./03_data_processing/README.md) for more 
 
 
 ## Data Management
-[Back to top](#table-of-contents)
+
 
 <table class="tg"><thead>
   <tr>
@@ -248,7 +250,7 @@ Refer to the [Definition of Variables](./03_data_processing/README.md) for more 
 
 
 #### Storage and Scalability:
-[Back to top](#table-of-contents)
+
 
 - All processed data is stored in Google Cloud Storage Buckets.
 - Designed for scalability and flexibility to integrate new enhancements and additional data sources.
@@ -257,7 +259,7 @@ Refer to the [Definition of Variables](./03_data_processing/README.md) for more 
 
 
 ## Data Trends
-[Back to top](#table-of-contents)
+
 
 **Exploratory Analysis:**
 - We conducted an extensive exploratory analysis available in our GitHub repository. *Reference 04_EDA.*
@@ -293,7 +295,7 @@ Across our Reddit data, blog post frequency was predictably higher during "norma
 
 
 ## Challenges
-[Back to top](#table-of-contents)
+
 
 This data processing was one of the most difficult challenges our team faced. Despite being popular subjects, bitcoin and reddit data sources often require paid subscriptions for live and full information. On the other hand, historical data sources could be found rather easily but posed great adversities in handling such big data. Successfully processing all the historical reddit data took several weeks within our alloted Capstone project time. We learned much about using Spark and other big data tools to overcome this hurdle.
 
@@ -302,7 +304,7 @@ This data processing was one of the most difficult challenges our team faced. De
 </div>
 
   
-[Back to top](#table-of-contents)
+
 
 Our ultimate goal is to provide actionable investment advice to the average person—the little guy who lacks extensive financial knowledge. Achieving this involves two main components: having our market prediction and conversing with the user to communicate relevant model findings and analyses.
 
@@ -314,7 +316,7 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
 
 ## Baseline Prophet Model
-[Back to top](#table-of-contents)
+
 
 <p align="center">
     <img src="images/premodel.jpg" alt="DFD" />
@@ -348,7 +350,7 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
 
 ## Sentiment Neural Network
-[Back to top](#table-of-contents)
+
 
 <p align="center">
     <img src="images/premodel1.jpg" alt="DFD" />
@@ -380,7 +382,7 @@ Performance Results:
 
 
 ## Tuning, Training, Validation
-[Back to top](#table-of-contents)
+
 
   - Overview: Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data. Target metric was MAPE.
 
@@ -400,7 +402,7 @@ Performance Results:
 *This results comprise of our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).*
 
 ## Conversational AI (Gemini AI Model)
-[Back to top](#table-of-contents)
+
 
 <p align="center">
     <img src="images/conv.jpg" alt="DFD" />
@@ -416,6 +418,8 @@ Performance Results:
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
+<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 <div align="center">
   
 # Findings
@@ -426,7 +430,7 @@ We focus on model findings and the story they tell.
 
 
 ## Bitcoin Seasonality
-[Back to top](#table-of-contents)
+
 
 Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic trends in Bitcoin persist, indicating some baseline and seasonality.
 
@@ -453,7 +457,7 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 - Originally we’d believed price volatility tends to beget volatility, and volatility would be level bias. Think of how markets get choppier as prices fall. But for bitcoin, it seems such signal was negligible. It’s possible that being a sentiment driven asset, its volatile in a surge whether it be up or down. 
 
 ## Sentiment Signals
-[Back to top](#table-of-contents)
+
 
 For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had either nothing to do with Bitcoin; or, little to insinuate taking trade action.
 
@@ -478,7 +482,7 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 
 
 ## Conversational AI
-[Back to top](#table-of-contents)
+
 
 **Assumptions**
 - One of the core assumptions that made Enique possible was that modern-day conversational AI, in our case, Google Gemini, could role-play as an investment advisor for non-financial retail clients. 
@@ -501,12 +505,15 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 **Debunked:**
 - Conversational AI struggles with accuracy when integrated datasets are numeric due to the relative lack of richer context. However, we overcame this by using restrictive function calling, keeping Enique grounded in our data and prediction model analyses suite.
 
+<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
+
 <div align="center">
   
 # Conclusion
 </div>
 
-[Back to top](#table-of-contents)
+
 
 **Enique’s business goals:**
 
@@ -522,13 +529,15 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 
 **In summary, Enique proves highly effective at role-playing an autonomous financial advisor and servicing customer needs.**
 
+<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
+
 <div align="center">
   
 # Future Work
 
 </div>
 
-[Back to top](#table-of-contents)
+
 
 For our next phase, we plan to work on three core areas:
 
@@ -551,10 +560,11 @@ For our next phase, we plan to work on three core areas:
 
 </div>
 
-[Back to top](#table-of-contents)
+
 
 <p align="center">
     <img src="images/our team.jpg" alt="Our Team" width="600" height="340"/>
  </p>
 
+<div align="right"><a href=“#table-of-contents”>Back to top</a></div>
 
