@@ -370,12 +370,12 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 **Validated:**
 - We were pleased to find in fact Gemini had enough pre-trained knowledge to range across most technical levels. 
 <p align="center">
-    <img src="images/senti_indi.jpeg" alt="bv"  width="600"/>
+    <img src="images/gemini-response-simplification.png" alt="bv"  width="600"/>
  </p>
 
 - A conversational AI could interpret user prompts into user needs and fetch the correct information to satisfy that need. See our example here on the right. When pasted about past Bitcoin momentum, Enique’s Conversational Model extrapolates what sort of data might be pertinent to the topic and returns layman understandable advice backed with numbers. 
 <p align="center">
-    <img src="images/senti_indi.jpeg" alt="bv"  width="600"/>
+    <img src="images/gemini-response-momentum.png" alt="bv"  width="600"/>
  </p>
 
 - 
