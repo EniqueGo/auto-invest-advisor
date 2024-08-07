@@ -1,3 +1,10 @@
+This folder contains all resources related to the feature selection process, including:
+
+- **feature_selection.py:** A Python script that implements various feature selection methods such as correlation selection, Random Forest feature importance, variance thresholding, and recursive feature elimination.
+- **reddit_preprocess_feature_selection_v2.0.0a1.ipynb:** A Jupyter notebook documenting the preprocessing and feature selection steps applied to Reddit data, including exploratory data analysis and feature selection criteria.
+
+
+
 | **Selected Feature**                      | **Description**                                                                                                  |
 |----------------------------------|------------------------------------------------------------------------------------------------------------------|
 | bollinger_lower                  | The lower band of the Bollinger Bands indicates the lower limit of the normal price range based on recent volatility. |
