@@ -28,7 +28,7 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
      - [Background](#background)
      - [Target Audience](#target-audience)
      - [Challenges](#challenges)
-   - Business Value
+   - [Business Value](#business-value)
      - [Pains of Human Services](#pains-of-human-services)
      - [Enique’s Capabilities](#eniques-capabilities)
 2. [Logistics](#logistics)
