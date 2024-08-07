@@ -83,7 +83,7 @@ These business values create earning opportunities, foster intellectual growth, 
   - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
 
 ### Definition of Variables 
-*Please reference 05_feature_engineering for a full dictionary of variables.*
+*Please reference 06_feature_selection for a full dictionary of variables.*
 
 ### Data Ingestion and Processing
 - **Bitcoin Data**: Prices and trade volume are ingested hourly, cleaned, and processed.
@@ -238,18 +238,23 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
   Overview:
   
+  
   - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
+    
   - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
+    
   - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
 
   Performance Results:
   
   - Backtesting MAPE = 6.3% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024.
+    
   - *For more details, reference 05_results folder*
 
   Analysis:
   
-  - Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance over-fitting vs. capturing such volatile price action. 
+  - Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance over-fitting vs. capturing such volatile price action.
+    
   - Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
 
 
