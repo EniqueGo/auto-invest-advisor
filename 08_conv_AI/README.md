@@ -1,3 +1,21 @@
+This directory contains files and folders related to the conversational AI component of the project, including:
+
+- **.streamlit:** Configuration files for Streamlit, used for deploying the conversational AI interface.
+- **chatbot:** Scripts and resources for building and managing the chatbot functionality.
+- **img:** Images and graphical assets used in the conversational AI interface.
+- **predictions:** Files related to generating and managing predictions made by the AI model.
+- **sentiment:** Scripts and data for sentiment analysis, which the AI uses to interpret user input.
+- **service:** Service layer scripts that handle interactions between the AI model and the user interface.
+- **test_data:** Test data used to validate the functionality of the conversational AI.
+- **Dockerfile:** Configuration file for containerizing the application using Docker.
+- **README.md:** Documentation file that provides an overview and instructions for the conversational AI component.
+- **index.py:** Main script for running the conversational AI application.
+- **requirements.txt:** List of Python dependencies required to run the application.
+- **style.css:** Stylesheet used to customize the appearance of the Streamlit interface.
+
+These components together enable the deployment and operation of the conversational AI, providing users with a seamless interface for interacting with the AI model.
+
+
 # Bitcoin Prediction Website
 
 
