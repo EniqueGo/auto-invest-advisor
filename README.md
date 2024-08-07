@@ -45,7 +45,8 @@ Enique focuses on individuals who may not have substantial savings but are eager
 **Enique's Capabilities**
 - **Customized Strategies**: Enique delivers specific investment strategies based on its proprietary market predictions.
 - **Plug-and-Play Tool**: Enique can seamlessly integrate any in-house proprietary prediction model, enhancing offerings for downstream clients. 
-  - To illustrate this concretely, our team has developed a *Bitcoin prediction model* integrated as the default within Enique. More details on this feature will be provided later.
+  - To illustrate this concretely, our team has developed a *Bitcoin prediction model* integrated as the default within Enique. 
+  - We feel there is a significant opportunity in this asset, which we will delve into more later. 
 - Enique performs **bespoke research on-the-fly**, leveraging its computational power to address client queries immediately.
 - Enique’s prediction models **adapt in real time** by directly integrating **live data**.
 - Enique is available 24/7, with no fees, and is deposit size agnostic, making it accessible to all income levels.
@@ -73,12 +74,16 @@ These business values create earning opportunities, foster intellectual growth, 
   
 ###  Data and Processing Overview
 
-- **Data Sources**:
+<p align="center">
+    <img src="images/dfd.jpg" alt="DFD">
+ </p>
+
+#### Data Sources**
   - **Bitcoin Market Data**: Sourced from Binance, including prices and trade volume.
   - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
 
 
-#### Data Ingestion and Processing:
+#### Data Ingestion and Processing
 - **Bitcoin Data**: Prices and trade volume are ingested hourly, cleaned, and processed.
 - **Reddit Data**:
   - Reddit API limits pull to the last 1000 observations. As post reactions such as upvotes, downvotes, and comments change over time, our API pulls data every fifteen minutes.
@@ -93,10 +98,6 @@ These business values create earning opportunities, foster intellectual growth, 
 
 - Surviving Reddit posts are processed using a pre-trained three-category sentiment model to assign positive, negative, and neutral sentiment scores. These are further engineered into creating unique features.
 
-
-<p align="center">
-    <img src="images/dfd.jpg" alt="DFD">
- </p>
 
 
 ##### Data Management:
@@ -232,27 +233,52 @@ Overview:
 - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
   - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
   - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
+
 Performance Results:
 - 
+
+Analysis:
+Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance overfitting vs. capturing such volatile price action. 
+
+<p align="center">
+    <img src="images/prophet_pred_timeseries.png" alt="prophet_pred" />
+ </p>
+
+Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
+
 
 2. **Sentiment Neural Network:**
 Overview:
 - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
-  - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+- The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+
 Form
- - Form:
 <p align="center">
-    <img src="images/lstm_layer_map.jpeg" alt="bv"/>
+    <img src="images/lstm_layer_map.jpeg" alt="lstm_layer_map"/>
  </p>
 
 
 **Why Focus on Bitcoin:**
 - Unlike traditional equities, Bitcoin has little to no fundamental valuation and is driven by technical factors and essentially sentiment. This makes it an ideal target for a tool to ingest big data and run deep learning models autonomously.
+- Bitcoin's current market cap is ~$1.09B, with retail flows making up ~20%. This signals significant money opportunity for Bitcoin investment tools. 
 
-**Model Training and Validation:**
-- Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data.
-- This results in our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).
 
+**Model Tuning, Training, Validation:**
+Overview. Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data. Target metric was MAPE.
+
+Hyperparameters:
+  - Prophet: {'weekly_seasonality': True, 'interval_width': 0.95, 'seasonality_mode': 'multiplicative', 'changepoint_prior_scale': 0.6, 'seasonality_prior_scale': 0.01, 'changepoint_range': 0.76}
+  - LSTM: {'units': 512, 'dropout_rate': 0.5, 'learning_rate': 0.004, 'epochs': 100, 'batch_size': 32, 'n_past': 360, 'patience': 10}. 
+
+Training: 
+Training data window for backtesting: 180 days. For historical analysis, we used approximately five years.
+
+Validation:
+Out-of-sample validation and testing was performed across multiple time windows. When backtesting, we focused on the July 1, 2024 to July 20th 2024 time period stepping forward an hour at a time.  When running on full historical data, 80/20 and cross validation were employed. 
+
+
+
+*This results in our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).*
 
 
 #### Conversational Model (Gemini AI Model)
@@ -263,8 +289,6 @@ Form
 
 - **Interpret User Requests:** Gemini interprets client needs through the UI chatbox.
 - **Prompt Engineering:** Trained to retrieve specific items from the prediction model and data outputs, repackaging them into layperson's terms for the user.
-
-**Final Product:**
 - The final product is displayed in our UI tool, thanks to multiple rounds of UX testing with the help of friends and family.
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
@@ -279,11 +303,22 @@ We focus on model findings and the story they tell.
 Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic trends in Bitcoin persist, indicating some baseline and seasonality.
 
 **Validated:**
-- Our model fit confirmed a significant upward linear growth trend and daily and weekly seasonalities, as depicted in the charts .
+- Our model-fit confirmed significant growth trends; and daily, weekly seasonalities -- depicted in the charts on your right.
+- Our data was scaled before modeling. So keep in mind the y-axis values are in units of standard deviation.
 
+** Prophet Model Decomposition for 180 Days*
 <p align="center">
     <img src="images/decom.png" alt="bv" width="600"/>
  </p>
+
+ ** Prophet Model Decomposition for Five Years*
+ <p align="center">
+    <img src="images/prophet_decomp_5y.jpeg" alt="prophet_decomp_5" width="600"/>
+ </p>
+
+- At the weekly level, price levels start the week higher and dip 1.5% lower going into the weekend. 
+- Recall that shorting is quite rare amongst the retail crowd.
+- Hourly patterns suggest minor peaks in the early mornings. Another peak right when most people in the US get off work. Perhaps the happy hour gossip and a little liquid courage. However, we do recognize the magnitude of the daily seasonality is minor vs. the weekly.
 
 **Debunked:**
 - One assumption we debunked was the multiplicative effect. Though market volatility tends to beget volatility, such a signal was negligible or at least muted in the long run.
@@ -293,9 +328,12 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had nothing to do with Bitcoin. More importantly, they didn’t seem to have a price impact.
 
 <p align="center">
+    <img src="images/.jpeg" alt="bv"  width="600"/>
+ </p>
+<p align="center">
     <img src="images/senti_indi.jpeg" alt="bv"  width="600"/>
  </p>
- 
+
 **Validated:**
 - If we could find relevant posts with consensus in sentiment, sentiment could be a leading indicator.
 
