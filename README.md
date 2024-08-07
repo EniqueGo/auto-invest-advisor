@@ -42,7 +42,7 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
    - [Data Ingestion, Processing](#data-ingestion-processing)
    - [Data Management](#data-management)
    - [Data Trends](#data-trends)
-   - [Data Adversities](#data_adversities)
+   - [Data Adversities](#data-adversities)
 
 4. [Methodology and Model Framework](#methodology-and-model-framework)
    - [Baseline Prophet Model](#baseline-prophet-model)
