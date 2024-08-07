@@ -378,9 +378,6 @@ Now what if we could find relevant posts, with strong reactions, that had consen
     <img src="images/gemini-response-momentum.png" alt="bv"  width="600"/>
  </p>
 
-- 
-- 
-- 
 - Direct data integration prevents hallucination. Enique stands out by integrating datasets that can be entirely numerical without relying on third-party qualitative analysis.
 
 **Debunked:**
