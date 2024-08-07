@@ -264,6 +264,7 @@ Our model framework has two macro-categories of models: **predictive** and **con
  </p>
   
   Overview:
+  
     - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
     - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
 
