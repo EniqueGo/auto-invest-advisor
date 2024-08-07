@@ -254,7 +254,7 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
   Form
 <p align="center">
-    <img src="images/lstm_layer_map.jpeg" alt="lstm_layer_map"/>
+    <img src="images/lstm_layer_map.jpeg" alt="lstm_layer_map" width="600"/>
  </p>
 
   Performance Results:
