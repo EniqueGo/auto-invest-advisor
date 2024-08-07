@@ -20,29 +20,73 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 <p align="center">
     <img src="images/interface_design-v2.png" alt="bv"/>
  </p>
-  
+
+# Table of Contents
+
+1. **Motivation**
+   - Problem Statement
+     - [Background](#background)
+     - [Target Audience](#target-audience)
+     - [Challenges](#challenges)
+   - Business Value
+     - [Pains of Human Services](#pains-of-human-services)
+     - [Enique’s Capabilities](#eniques-capabilities)
+2. **Logistics**
+   - [Package Requirements](#package-requirements)
+3. **Data and Processing**
+   - [Data Sources](#data-sources)
+   - [Definition of Variables](./03_data_processing/README.md)
+   - [Data Ingestion, Processing](#data-ingestion-processing)
+   - [Data Management](#data-management)
+   - [Data Trends](#data-trends)
+   - [Challenges](#challenges)
+4. **Methodology and Model Framework**
+   - [Baseline Prophet Model](#baseline-prophet-model)
+   - [Sentiment Neural Network](#sentiment-neural-network)
+   - [Tuning, Training, Validation](#tuning-training-validation)
+   - [Conversational AI](#conversational-ai)
+5. **Findings**
+   - [Bitcoin Seasonality](#bitcoin-seasonality)
+   - [Sentiment Signals](#sentiment-signals)
+   - [Conversational AI](#conversational-ai)
+
+6. **Conclusion**
+7. **Future Work**
+8. **Our Team**
+
+
+
+# Motivation
+
 ## Problem Statement
-**Background:** As of 1Q24, the portion of total household wealth made up of financial assets is ~68% -- of which ~40% is invested in corporate equities; and, two-thirds of people across the world invest in the markets. These retail (vs. institutional) investors often need more hands-on guidance on how to aptly invest. 
+
+### Background
+As of 1Q24, the portion of total household wealth made up of financial assets is ~68% -- of which ~40% is invested in corporate equities; and, two-thirds of people across the world invest in the markets. These retail (vs. institutional) investors often need more hands-on guidance on how to aptly invest. 
 
 Providing services to such a large number of different individuals at the quality expected in today's world is a challenge that is inefficiently managed. This failure of existing methods to meet client standards have left many non-financial experts under-serviced. 
 
-**Target Audience**: 
+### Target Audience
 Enique focuses on individuals who may not have substantial savings but are eager to generate passive income to enjoy life's simple pleasures.
 
-**Challenges**: Navigating the financial landscape is daunting and time-consuming, even for industry professionals. Outsourcing investment advice is costly and largely inaccessible to our target users. Playing the safe, conservative long game does not yield significant immediate-term profits, which is a primary concern for our audience.
+### Challenges
+Navigating the financial landscape is daunting and time-consuming, even for industry professionals. Outsourcing investment advice is costly and largely inaccessible to our target users. Playing the safe, conservative long game does not yield significant immediate-term profits, which is a primary concern for our audience.
 
 **Enique's business value begins by addressing these pain points.**
 
 
 ## Business Value
+
 **Enique’s capabilities surpass those of typical human investment advisors.**
 <p align="center">
     <img src="images/bv.jpg" alt="bv"/>
  </p>
- 
-**Pains of Human Services**: Human investment advisors provide financial guidance based on standardized strategies and second-hand research. They cannot customize or generate ad-hoc analyses upon request. Additionally, their fee structures are not worthwhile for individuals with smaller deposits.
 
-**Enique's Capabilities**
+### Pains of Human Services
+
+Human investment advisors provide financial guidance based on standardized strategies and second-hand research. They cannot customize or generate ad-hoc analyses upon request. Additionally, their fee structures are not worthwhile for individuals with smaller deposits.
+
+### Enique’s Capabilities
+
 - **Customized Strategies**: Enique delivers specific investment strategies based on its proprietary market predictions.
 - **Plug-and-Play Tool**: Enique can seamlessly integrate any in-house proprietary prediction model, enhancing offerings for downstream clients. 
   - To illustrate this concretely, our team has developed a *Bitcoin prediction model* integrated as the default within Enique. 
@@ -55,10 +99,9 @@ These business values create earning opportunities, foster intellectual growth, 
 
 **More earning and learning; less spending and tending.**
 
+# Logistics
 
-## Technical Sophistication and Efficiency
-
-### Package Requirements
+## Package Requirements
 
 -   OS: Debian 11
 -   Python: 3.10.14; 3.11.2
@@ -72,20 +115,25 @@ These business values create earning opportunities, foster intellectual growth, 
 -   Prophet: 1.1.5
 -   Streamlit: 1.34.0
   
-##  Data and Processing Overview
+# Data and Processing
 
 <p align="center">
     <img src="images/dfd.jpg" alt="DFD">
  </p>
 
-### Data Sources
+## Data Sources
+
   - **Bitcoin Market Data**: Sourced from Binance, including prices and trade volume.
   - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
 
-### Definition of Variables 
-*Please reference 06_feature_selection for a full dictionary of variables.*
+## Definition of Variables
 
-### Data Ingestion and Processing
+Refer to the [Definition of Variables](./03_data_processing/README.md) for more details.
+
+
+
+## Data Ingestion, Processing
+
 - **Bitcoin Data**: Prices and trade volume are ingested hourly, cleaned, and processed.
 - **Reddit Data**:
   - Reddit API limits pull to the last 1000 observations. As post reactions such as upvotes, downvotes, and comments change over time, our API pulls data every fifteen minutes.
@@ -102,8 +150,8 @@ These business values create earning opportunities, foster intellectual growth, 
 
 
 
-#### Data Management:
 
+## Data Management
 
 <table class="tg"><thead>
   <tr>
@@ -172,8 +220,7 @@ These business values create earning opportunities, foster intellectual growth, 
 - Flexible enough to integrate with third-party models for easy platform integration.
 
 
-
-### Data Trend
+## Data Trends
 
 **Exploratory Analysis:**
 - We conducted an extensive exploratory analysis available in our GitHub repository. *Reference 04_EDA.*
@@ -207,12 +254,13 @@ Across our Reddit data, blog post frequency was predictably higher during "norma
 - The final chart demonstrates that the earnings opportunity for Bitcoin is much more significant due to its higher volatility. However, the risk-adjusted returns could be more attractive.
 
 
-#### Data Challenges
+
+## Challenges
 
 This data processing was one of the most difficult challenges our team faced. Despite being popular subjects, bitcoin and reddit data sources often require paid subscriptions for live and full information. On the other hand, historical data sources could be found rather easily but posed great adversities in handling such big data. Successfully processing all the historical reddit data took several weeks within our alloted Capstone project time. We learned much about using Spark and other big data tools to overcome this hurdle.
 
 
-###  Model Framework
+# Methodology and Model Framework
 
 Our ultimate goal is to provide actionable investment advice to the average person—the little guy who lacks extensive financial knowledge. Achieving this involves two main components: having our market prediction and conversing with the user to communicate relevant model findings and analyses.
 
@@ -223,12 +271,8 @@ Our model framework has two macro-categories of models: **predictive** and **con
  </p>
 
 
-#### Predictive Modeling
+## Baseline Prophet Model
 
-
-**Layers of Prediction Models:**
-
-1. **Baseline Prophet Model:**
 <p align="center">
     <img src="images/premodel.jpg" alt="DFD" />
  </p>
@@ -259,7 +303,9 @@ Our model framework has two macro-categories of models: **predictive** and **con
   - Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
 
 
-2. **Sentiment Neural Network:**
+
+## Sentiment Neural Network
+
 <p align="center">
     <img src="images/premodel1.jpg" alt="DFD" />
  </p>
@@ -289,7 +335,7 @@ Performance Results:
 - Bitcoin's current market cap is ~$1.09B, with retail flows making up ~20%. This signals significant money opportunity for Bitcoin investment tools. 
 
 
-**Model Tuning, Training, Validation:**
+## Tuning, Training, Validation
 
   - Overview: Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data. Target metric was MAPE.
 
@@ -308,8 +354,7 @@ Performance Results:
 
 *This results comprise of our in-house Bitcoin prediction and interesting engineered features (like sentiment indicators).*
 
-
-#### Conversational Model (Gemini AI Model)
+## Conversational AI (Gemini AI Model)
 
 <p align="center">
     <img src="images/conv.jpg" alt="DFD" />
@@ -326,11 +371,12 @@ Performance Results:
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
 
-## Findings
+# Findings
 
 We focus on model findings and the story they tell.
 
-### Bitcoin Seasonality
+
+## Bitcoin Seasonality
 
 Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic trends in Bitcoin persist, indicating some baseline and seasonality.
 
@@ -356,7 +402,7 @@ Recall our baseline Bitcoin Prophet model. The hypothesis was that systematic tr
 - One assumption we debunked was the multiplicative effect. 
 - Originally we’d believed price volatility tends to beget volatility, and volatility would be level bias. Think of how markets get choppier as prices fall. But for bitcoin, it seems such signal was negligible. It’s possible that being a sentiment driven asset, its volatile in a surge whether it be up or down. 
 
-### Sentiment Signal
+## Sentiment Signals
 
 For our sentiment signal, we started with the hunch that strong feelings were not always relevant. This was validated by our Reddit data processing results, in which we found several posts deemed strongly positive (negative or neutral) but had either nothing to do with Bitcoin; or, little to insinuate taking trade action.
 
@@ -379,7 +425,8 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 - We say loosely because one of the more naive assumptions we debunked was that the relationship between sentiment and price is generalizable. 
 - It is, in fact, convoluted. Causation direction is highly circumstantial. And this made performance attribution particularly tricky.
 
-### Conversational AI
+
+## Conversational AI
 
 **Assumptions**
 - One of the core assumptions that made Enique possible was that modern-day conversational AI, in our case, Google Gemini, could role-play as an investment advisor for non-financial retail clients. 
@@ -403,7 +450,7 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 - Conversational AI struggles with accuracy when integrated datasets are numeric due to the relative lack of richer context. However, we overcame this by using restrictive function calling, keeping Enique grounded in our data and prediction model analyses suite.
 
 
-## Conclusion
+# Conclusion
 
 **Enique’s business goals:**
 
@@ -428,7 +475,7 @@ Aug 6, 2024-->
 
 
 
-## Future Work
+# Future Work
 
 For our next phase, we plan to work on three core areas:
 
@@ -446,7 +493,7 @@ For our next phase, we plan to work on three core areas:
 
 
 
-## Our Team
+# Our Team
 
 <p align="center">
     <img src="images/our team.jpg" alt="Our Team" width="600" height="340"/>
