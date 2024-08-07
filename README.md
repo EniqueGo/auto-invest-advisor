@@ -21,6 +21,8 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
     <img src="images/interface_design-v2.png" alt="bv"/>
  </p>
 
+ Demo: [https://EniqueGo.com](https://eniquego.com)
+
 # Table of Contents
 
 1. [Motivation](#motivation)
