@@ -216,19 +216,23 @@ Our ultimate goal is to provide actionable investment advice to the average pers
 Our model framework has two macro-categories of models: **predictive** and **conversational**.
 
 <p align="center">
-    <img src="images/modelframe.jpg" alt="DFD" />
+    <img src="images/modelframe.png" alt="DFD" />
  </p>
 
 
 #### Predictive Modeling
 
 <p align="center">
-    <img src="images/premodel.jpg" alt="DFD" />
+    <img src="images/premodel1.jpg" alt="DFD" />
  </p>
 
 **Layers of Prediction Models:**
 
 1. **Baseline Prophet Model:**
+<p align="center">
+    <img src="images/premodel.jpg" alt="DFD" />
+ </p>
+
 Overview:
 - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
   - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
@@ -239,10 +243,6 @@ Performance Results:
 
 Analysis:
 Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance overfitting vs. capturing such volatile price action. 
-
-<p align="center">
-    <img src="images/prophet_pred_timeseries.png" alt="prophet_pred" />
- </p>
 
 Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
 
