@@ -264,18 +264,18 @@ Our model framework has two macro-categories of models: **predictive** and **con
     <img src="images/premodel1.jpg" alt="DFD" />
  </p>
   
-- Overview:
+Overview:
 
   - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
 
   - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
 
-  Form
+Form:
 <p align="center">
     <img src="images/lstm_layer_map.jpeg" alt="lstm_layer_map" width="600"/>
  </p>
 
-- Performance Results:
+Performance Results:
 
   - Backtesting MAPE = 5.88%% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024. 
   - Backtesting MAPE per hour bucket is lowest at 6th hour (4.18%) and highest at the 116th hour (7.43%).
