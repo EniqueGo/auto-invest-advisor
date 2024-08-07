@@ -58,7 +58,11 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 
 
-# Motivation 
+<div align="center">
+
+# Motivation
+
+</div>
 
 ## Problem Statement
 
