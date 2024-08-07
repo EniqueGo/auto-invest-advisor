@@ -263,22 +263,24 @@ Our model framework has two macro-categories of models: **predictive** and **con
     <img src="images/premodel1.jpg" alt="DFD" />
  </p>
   
-  Overview:
-  
-    - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
-    - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
+- Overview:
+
+  - The second model takes the Prophet model's outputs and mixes them with new signals, including sentiment indicators and trade technicals.
+
+  - The LSTM transformation deciphers the complex relationship between sentiment, price, and time, causing Bitcoin prices to deviate from baseline trends.
 
   Form
 <p align="center">
     <img src="images/lstm_layer_map.jpeg" alt="lstm_layer_map" width="600"/>
  </p>
 
-  Performance Results:
-    - Backtesting MAPE = 5.88%% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024. 
-    - Backtesting MAPE per hour bucket is lowest at 6th hour (4.18%) and highest at the 116th hour (7.43%).
-    - Backtesting Standard Error = $1430.
-    - Backtesting Average RMSPE = 6.37%.
-    - *For more details, reference 05_results folder*
+- Performance Results:
+
+  - Backtesting MAPE = 5.88%% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024. 
+  - Backtesting MAPE per hour bucket is lowest at 6th hour (4.18%) and highest at the 116th hour (7.43%).
+  - Backtesting Standard Error = $1430.
+  - Backtesting Average RMSPE = 6.37%.
+  - *For more details, reference 05_results folder*
 
 
 **Why Focus on Bitcoin:**
@@ -288,17 +290,17 @@ Our model framework has two macro-categories of models: **predictive** and **con
 
 **Model Tuning, Training, Validation:**
 
-  Overview. Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data. Target metric was MAPE.
+  - Overview: Prophet and LSTM models were trained, hyper-tuned, and out-sample validated using up to five years of historical data. Target metric was MAPE.
 
-  Hyperparameters:
+  - Hyperparameters:
     - Prophet: {'weekly_seasonality': True, 'interval_width': 0.95, 'seasonality_mode': 'multiplicative', 'changepoint_prior_scale': 0.6, 'seasonality_prior_scale': 0.01, 'changepoint_range': 0.76}
     - LSTM: {'units': 512, 'dropout_rate': 0.5, 'learning_rate': 0.004, 'epochs': 100, 'batch_size': 32, 'n_past': 360, 'patience': 10}. 
 
-  Training:
+  - Training:
     - Backtesting: 180 days. 
     - Historical analysis: ~5 years.
 
-  Validation:
+  - Validation:
     - Out-of-sample validation and testing was performed across multiple time windows. 
     - When backtesting on recent data, we focused on the July 1, 2024 to July 20th 2024 time period stepping forward an hour at a time. 
     - When running on full historical data, 80/20 and cross-validation were employed. 
