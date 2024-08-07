@@ -236,18 +236,25 @@ Our model framework has two macro-categories of models: **predictive** and **con
     <img src="images/premodel.jpg" alt="DFD" />
  </p>
 
+ Background: 
+ 
+ Facebook’s Prophet model is an open-source tool for predicting time series data by utilizing fourier transforms. We selected this model for its computational prowess, flexibility, and ease of use in modeling seasonal patterns. For more details, reference—[https://facebook.github.io/prophet/docs/quick_start.html](https://facebook.github.io/prophet/docs/quick_start.html)
+
   Overview:
-    - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
-    - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
-    - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
+  
+  - The first layer of prediction is our baseline Prophet model, which captures systematic price patterns driven by investor habits, such as the tendency to buy or sell trades at certain times.
+  - During training, we input various combinations of engineered features as regressors, but none were notably beneficial at this stage.
+  - Outputs include *baseline price, trend, seasonality, and a prediction residual*.
 
   Performance Results:
-    - Backtesting MAPE = 6.3% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024.
-    - *For more details, reference 05_results folder*
+  
+  - Backtesting MAPE = 6.3% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024.
+  - *For more details, reference 05_results folder*
 
   Analysis:
-    - Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance over-fitting vs. capturing such volatile price action. 
-    - Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
+  
+  - Look at how much the actual Bitcoin price (in black) deviates from the modeled price in blue. It’s clearly difficult to balance over-fitting vs. capturing such volatile price action. 
+  - Yet rather than asking what regressors can we add, what if we accept that baseline trend as fact. And instead, try to capture that remaining residual – in other words, the deviation of bitcoin actual prices from baseline trends. 
 
 
 2. **Sentiment Neural Network:**
