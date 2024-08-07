@@ -62,7 +62,7 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 # MOTIVATION
 
-## PROBLEM STATEMENT
+## Problem Statement
 </div>
 
 
@@ -87,7 +87,7 @@ Navigating the financial landscape is daunting and time-consuming, even for indu
 
 <div align="center">
   
-## BUSINESS VALUE
+## Business Value
 
 </div>
 
@@ -299,8 +299,11 @@ Across our Reddit data, blog post frequency was predictably higher during "norma
 
 This data processing was one of the most difficult challenges our team faced. Despite being popular subjects, bitcoin and reddit data sources often require paid subscriptions for live and full information. On the other hand, historical data sources could be found rather easily but posed great adversities in handling such big data. Successfully processing all the historical reddit data took several weeks within our alloted Capstone project time. We learned much about using Spark and other big data tools to overcome this hurdle.
 
+
 <div align="center">
+  
 # METHODOLOGY AND MODEL FRAMEWORK
+
 </div>
 
   
@@ -339,7 +342,7 @@ Our model framework has two macro-categories of models: **predictive** and **con
   
   - Backtesting MAPE = 6.3% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024.
     
-  - *For more details, reference 99_archives/05_results folder*
+  - *For more details, reference 99_archives and 05_results folders*
 
   Analysis:
   
