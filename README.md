@@ -36,7 +36,7 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 3. [Data and Processing](#data-and-processing)
    - [Data Sources](#data-sources)
-   - [Definition of Variables](./03_data_processing/README.md)
+   - [Definition of Variables](./06_feature_selection/README.md)
    - [Data Ingestion, Processing](#data-ingestion-processing)
    - [Data Management](#data-management)
    - [Data Trends](#data-trends)
