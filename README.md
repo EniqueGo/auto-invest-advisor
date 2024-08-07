@@ -72,18 +72,20 @@ These business values create earning opportunities, foster intellectual growth, 
 -   Prophet: 1.1.5
 -   Streamlit: 1.34.0
   
-###  Data and Processing Overview
+##  Data and Processing Overview
 
 <p align="center">
     <img src="images/dfd.jpg" alt="DFD">
  </p>
 
-#### Data Sources
+### Data Sources
   - **Bitcoin Market Data**: Sourced from Binance, including prices and trade volume.
   - **Reddit Blog Posts**: Sourced to proxy sentiment for our prediction model.
 
+### Definition of Variables 
+*Please reference 05_feature_engineering for a full dictionary of variables.*
 
-#### Data Ingestion and Processing
+### Data Ingestion and Processing
 - **Bitcoin Data**: Prices and trade volume are ingested hourly, cleaned, and processed.
 - **Reddit Data**:
   - Reddit API limits pull to the last 1000 observations. As post reactions such as upvotes, downvotes, and comments change over time, our API pulls data every fifteen minutes.
@@ -100,7 +102,7 @@ These business values create earning opportunities, foster intellectual growth, 
 
 
 
-##### Data Management:
+#### Data Management:
 
 
 <table class="tg"><thead>
@@ -163,17 +165,12 @@ These business values create earning opportunities, foster intellectual growth, 
 
 
 
-##### Storage and Scalability:
+#### Storage and Scalability:
 - All processed data is stored in Google Cloud Storage Buckets.
 - Designed for scalability and flexibility to integrate new enhancements and additional data sources.
 - Capable of extracting trend analytics and enriching prediction model inputs to expand advisory offerings.
 - Flexible enough to integrate with third-party models for easy platform integration.
 
-
-### Definition of Variables 
-
-
-@todo
 
 
 ### Data Trend
