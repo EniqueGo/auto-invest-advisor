@@ -60,9 +60,9 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 
 <div align="center">
 
-# Motivation
+# MOTIVATION
 
-## Problem Statement
+## PROBLEM STATEMENT
 </div>
 
 
@@ -87,7 +87,7 @@ Navigating the financial landscape is daunting and time-consuming, even for indu
 
 <div align="center">
   
-## Business Value
+## BUSINESS VALUE
 
 </div>
 
@@ -122,7 +122,7 @@ These business values create earning opportunities, foster intellectual growth, 
 
 <div align="center">
   
-# Logistics
+# LOGISTICS
 
 </div>
 
@@ -143,7 +143,7 @@ These business values create earning opportunities, foster intellectual growth, 
 
 <div align="center">
   
-# Data and Processing
+# DATA AND PROCESSING
 </div>
 
 
@@ -161,7 +161,7 @@ These business values create earning opportunities, foster intellectual growth, 
 ## Definition of Variables
 
 
-Refer to the [Definition of Variables](./03_data_processing/README.md) for more details.
+Refer to the [Definition of Variables](./06_feature_selection/README.md) for more details.
 
 
 
@@ -300,7 +300,7 @@ Across our Reddit data, blog post frequency was predictably higher during "norma
 This data processing was one of the most difficult challenges our team faced. Despite being popular subjects, bitcoin and reddit data sources often require paid subscriptions for live and full information. On the other hand, historical data sources could be found rather easily but posed great adversities in handling such big data. Successfully processing all the historical reddit data took several weeks within our alloted Capstone project time. We learned much about using Spark and other big data tools to overcome this hurdle.
 
 <div align="center">
-# Methodology and Model Framework
+# METHODOLOGY AND MODEL FRAMEWORK
 </div>
 
   
@@ -422,7 +422,7 @@ We've walked you through the complete data and methodology of Enique's framework
 
 <div align="center">
   
-# Findings
+# FINDINGS
 
 </div>
 
@@ -510,7 +510,7 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 
 <div align="center">
   
-# Conclusion
+# CONCLUSION
 </div>
 
 
@@ -533,7 +533,7 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 
 <div align="center">
   
-# Future Work
+# FUTURE WORK
 
 </div>
 
@@ -556,7 +556,7 @@ For our next phase, we plan to work on three core areas:
 
 <div align="center">
   
-# Our Team
+# OUR TEAM
 
 </div>
 
