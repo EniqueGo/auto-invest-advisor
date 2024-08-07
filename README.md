@@ -249,7 +249,7 @@ Our model framework has two macro-categories of models: **predictive** and **con
   
   - Backtesting MAPE = 6.3% when predicting 120 hours into the future at hourly steps during the period of July 1, 2024 - July 20, 2024.
     
-  - *For more details, reference 05_results folder*
+  - *For more details, reference 99_archives/05_results folder*
 
   Analysis:
   
