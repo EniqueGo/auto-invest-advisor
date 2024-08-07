@@ -65,12 +65,6 @@ Enique is a conversational AI investment advisor integrated with a proprietary p
 ## Problem Statement
 </div>
 
-<div align="center">
-  
-
-
-</div>
-
 
 ### Background 
 [Back to top](#table-of-contents)
@@ -91,8 +85,12 @@ Navigating the financial landscape is daunting and time-consuming, even for indu
 
 **Enique's business value begins by addressing these pain points.**
 
-
+<div align="center">
+  
 ## Business Value
+
+</div>
+
 [Back to top](#table-of-contents)
 
 **Enique’s capabilities surpass those of typical human investment advisors.**
@@ -120,7 +118,11 @@ These business values create earning opportunities, foster intellectual growth, 
 
 **More earning and learning; less spending and tending.**
 
+<div align="center">
+  
 # Logistics
+
+</div>
 
 ## Package Requirements
 [Back to top](#table-of-contents)
@@ -136,8 +138,12 @@ These business values create earning opportunities, foster intellectual growth, 
 -   Spark-nlp: 4.2.0
 -   Prophet: 1.1.5
 -   Streamlit: 1.34.0
+
+<div align="center">
   
 # Data and Processing
+</div>
+
 [Back to top](#table-of-contents)
 
 <p align="center">
@@ -291,8 +297,11 @@ Across our Reddit data, blog post frequency was predictably higher during "norma
 
 This data processing was one of the most difficult challenges our team faced. Despite being popular subjects, bitcoin and reddit data sources often require paid subscriptions for live and full information. On the other hand, historical data sources could be found rather easily but posed great adversities in handling such big data. Successfully processing all the historical reddit data took several weeks within our alloted Capstone project time. We learned much about using Spark and other big data tools to overcome this hurdle.
 
-
+<div align="center">
 # Methodology and Model Framework
+</div>
+
+  
 [Back to top](#table-of-contents)
 
 Our ultimate goal is to provide actionable investment advice to the average person—the little guy who lacks extensive financial knowledge. Achieving this involves two main components: having our market prediction and conversing with the user to communicate relevant model findings and analyses.
@@ -407,8 +416,11 @@ Performance Results:
 
 We've walked you through the complete data and methodology of Enique's framework, showing how it combines predictive and conversational AI to provide valuable investment advice.
 
-
+<div align="center">
+  
 # Findings
+
+</div>
 
 We focus on model findings and the story they tell.
 
@@ -489,8 +501,11 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 **Debunked:**
 - Conversational AI struggles with accuracy when integrated datasets are numeric due to the relative lack of richer context. However, we overcame this by using restrictive function calling, keeping Enique grounded in our data and prediction model analyses suite.
 
-
+<div align="center">
+  
 # Conclusion
+</div>
+
 [Back to top](#table-of-contents)
 
 **Enique’s business goals:**
@@ -507,16 +522,12 @@ Now what if we could find relevant posts, with strong reactions, that had consen
 
 **In summary, Enique proves highly effective at role-playing an autonomous financial advisor and servicing customer needs.**
 
-<!--## Trello Status
-
-
-<img src="images/trello-Aug6-2024.png" alt="bv" />
-
-Aug 6, 2024-->
-
-
-
+<div align="center">
+  
 # Future Work
+
+</div>
+
 [Back to top](#table-of-contents)
 
 For our next phase, we plan to work on three core areas:
@@ -534,8 +545,12 @@ For our next phase, we plan to work on three core areas:
    - **RAG:** Humanizing and outside data-source retrieval
 
 
-
+<div align="center">
+  
 # Our Team
+
+</div>
+
 [Back to top](#table-of-contents)
 
 <p align="center">
